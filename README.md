@@ -40,7 +40,7 @@ python3 tools/build_deck.py apresentacoes/pare-antes-de-compartilhar
 python3 tools/build_deck.py apresentacoes/riscos-online-para-adolescentes
 ```
 
-As duas imagens do slide "Real ou IA?" não estão no repositório por direitos autorais; veja [`apresentacoes/pare-antes-de-compartilhar/assets/README.md`](apresentacoes/pare-antes-de-compartilhar/assets/README.md).
+O script também baixa imagens que faltem, se `assets/assets.json` indicar uma `url`. Créditos e uso das imagens: [`apresentacoes/pare-antes-de-compartilhar/assets/README.md`](apresentacoes/pare-antes-de-compartilhar/assets/README.md).
 
 ## Antes da palestra
 Dados, leis (MED 2.0, ECA Digital, Lei 15.123/2025) e links das checagens mudam: confira na véspera, como indicam os próprios documentos.

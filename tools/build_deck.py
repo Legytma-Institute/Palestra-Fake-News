@@ -7,8 +7,14 @@ Saída: apresentacoes/<deck>/apresentacao.html
 Lê deck.json (ordem, título, fontes), junta os slides de slides/<id>.html,
 troca referências /_blob/<id> pelos arquivos locais listados em assets/assets.json
 e mostra as notas do apresentador (<aside>) com a tecla N.
+
+Cada entrada de assets.json pode ser só o caminho local
+    "/_blob/<id>": "assets/foto.png"
+ou um objeto com o endereço de onde baixar a imagem quando ela não está no repositório
+    "/_blob/<id>": {"arquivo": "assets/foto.jpg", "url": "https://..."}
+Imagens que faltam e têm "url" são baixadas antes de gerar o HTML.
 """
-import html, json, re, sys
+import html, json, re, sys, urllib.request
 from pathlib import Path
 
 deck_dir = Path(sys.argv[1])
@@ -16,7 +22,22 @@ deck = json.loads((deck_dir / "deck.json").read_text(encoding="utf-8"))
 assets_map = {}
 amap = deck_dir / "assets" / "assets.json"
 if amap.exists():
-    assets_map = json.loads(amap.read_text(encoding="utf-8"))
+    for blob, entry in json.loads(amap.read_text(encoding="utf-8")).items():
+        if isinstance(entry, str):
+            entry = {"arquivo": entry}
+        local = deck_dir / entry["arquivo"]
+        url = entry.get("url")
+        if not local.exists() and url:
+            print(f"baixando {entry['arquivo']} de {url}")
+            try:
+                req = urllib.request.Request(url, headers={"User-Agent": "build_deck/1.0"})
+                with urllib.request.urlopen(req, timeout=60) as r:
+                    local.write_bytes(r.read())
+            except Exception as e:
+                print(f"  falhou: {e}")
+        if not local.exists():
+            print(f"aviso: {entry['arquivo']} não encontrado; o slide mostrará só o texto alternativo")
+        assets_map[blob] = entry["arquivo"]
 
 fonts = "\n".join(
     f'<link rel="stylesheet" href="{html.escape(f["href"])}">'
