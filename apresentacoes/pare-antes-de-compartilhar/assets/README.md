@@ -3,6 +3,7 @@
 | Arquivo | Slide | No repositório? |
 |---|---|---|
 | `ilsi-brasil-print.png` | Dinâmica de leitura lateral | Sim — print do site do ILSI Brasil (10/11/2026), usado para crítica e estudo |
+| `qr-prompt-checagem-completo.png` | "Leve um checador no bolso" | Sim — QR Code que abre `docs/prompt-checagem-completo.txt` em texto puro |
 | `real-ou-ia-a-gize.jpg` | "Real ou IA?" — imagem A (falsa) | **Não** |
 | `real-ou-ia-b-etna.jpg` | "Real ou IA?" — imagem B (foto real de Davide Basile) | **Não** |
 
