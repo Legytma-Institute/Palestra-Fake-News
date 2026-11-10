@@ -19,6 +19,8 @@ Cada pasta tem `deck.json` (título, ordem, seções, fontes), `slides/<id>.html
 | [`real-ou-ia-par-de-imagens.md`](docs/real-ou-ia-par-de-imagens.md) | Pesquisa do par de imagens checadas para o "Real ou IA?" da abertura. |
 | [`leitura-lateral-ilsi-brasil.md`](docs/leitura-lateral-ilsi-brasil.md) | Caso do ILSI Brasil para a dinâmica de leitura lateral, com alternativas e roteiro. |
 | [`pesquisa-adolescentes-seguros-no-online.md`](docs/pesquisa-adolescentes-seguros-no-online.md) | Pesquisa "Adolescentes seguros no online" (03/11/2026): riscos, estudos, proteção, leis e canais de ajuda. |
+| [`prompt-checagem-completo.md`](docs/prompt-checagem-completo.md) | Prompt para checar notícias com IA, versão completa (computador). |
+| [`prompt-checagem-curto.md`](docs/prompt-checagem-curto.md) | Prompt para checar notícias com IA, versão curta (celular, Meta AI no WhatsApp). |
 
 ### Design system (`design-system/verifica/`)
 Tokens (`tokens.json`), guia (`README.md`), capa (`components/Cover/preview.html`) e índice (`design-system.json`) do sistema visual "Verifica": um jornal de papel sendo checado.
