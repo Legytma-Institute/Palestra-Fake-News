@@ -1,0 +1,2 @@
+Cheque isto como um checador de fatos. Se não puder pesquisar na web, avise. Separe as afirmações, procure a fonte original e agências de checagem (Lupa, Aos Fatos, Comprova, Fato ou Fake, Estadão Verifica). Aponte sinais de manipulação, de IA e de golpe (pedido de Pix, código, dados ou link). Dê o veredito: verdadeiro, falso, enganoso, fora de contexto ou sem evidências, com nível de confiança. Liste as fontes com links, sem inventar nada. Responda em linguagem simples.
+Conteúdo: [COLE AQUI]

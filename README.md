@@ -21,6 +21,14 @@ Cada pasta tem `deck.json` (título, ordem, seções, fontes), `slides/<id>.html
 | [`pesquisa-adolescentes-seguros-no-online.md`](docs/pesquisa-adolescentes-seguros-no-online.md) | Pesquisa "Adolescentes seguros no online" (03/11/2026): riscos, estudos, proteção, leis e canais de ajuda. |
 | [`prompt-checagem-completo.md`](docs/prompt-checagem-completo.md) | Prompt para checar notícias com IA, versão completa (computador). |
 | [`prompt-checagem-curto.md`](docs/prompt-checagem-curto.md) | Prompt para checar notícias com IA, versão curta (celular, Meta AI no WhatsApp). |
+| [`prompt-checagem-completo.txt`](docs/prompt-checagem-completo.txt) e [`prompt-checagem-curto.txt`](docs/prompt-checagem-curto.txt) | Os mesmos prompts só em texto puro, para os QR Codes. |
+
+#### Links para os QR Codes
+Estes endereços abrem só o texto do prompt, sem a página do GitHub:
+- Completo: https://raw.githubusercontent.com/Legytma-Institute/Palestra-Fake-News/main/docs/prompt-checagem-completo.txt
+- Curto: https://raw.githubusercontent.com/Legytma-Institute/Palestra-Fake-News/main/docs/prompt-checagem-curto.txt
+
+Se editar um prompt, altere o `.md` e o `.txt` juntos.
 
 ### Design system (`design-system/verifica/`)
 Tokens (`tokens.json`), guia (`README.md`), capa (`components/Cover/preview.html`) e índice (`design-system.json`) do sistema visual "Verifica": um jornal de papel sendo checado.
