@@ -12,9 +12,8 @@ Guia impresso para os alunos levarem para casa: 4 páginas A4, fundo branco, par
 1. Como identificar: checklist P.I.R.A., leitura lateral, sinais de alerta, armadilhas do cérebro, ferramentas grátis e a regra de ouro.
 2. Golpes mais comuns entre jovens, kit básico de proteção, "desconfiar de tudo também atrapalha" e o sanduíche da verdade.
 3. Se cair num golpe: passos, ameaça com foto íntima, deepfake e IA, onde pedir ajuda e o prompt curto com o QR Code.
-4. Prompt completo impresso e as referências das dicas.
+4. Prompt completo impresso (para quem não conseguir escanear o QR) e as referências das dicas. É opcional na impressão.
 
-Para imprimir só uma folha frente e verso, imprima as páginas 1 a 2 ou 1 a 3 conforme a necessidade (a página 4 é opcional).
 
 ## Regerar o PDF depois de editar o HTML
 
