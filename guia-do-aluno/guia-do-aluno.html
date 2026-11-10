@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Pare antes de compartilhar — guia de bolso</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600..800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&display=swap">
+<style>
+  @page { size: A4; margin: 11mm 12mm; }
+  :root {
+    --papel: #f6f1e7; --papel-2: #e9dfcb; --tinta: #1b1a17; --tinta-suave: #5c5649;
+    --linha: #8f8676; --fato: #1f5aa6; --fake: #b93d0c; --marca: #ffd23f;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Atkinson Hyperlegible', Verdana, sans-serif; font-size: 9.8pt; line-height: 1.4; color: var(--tinta); background: #fff; }
+  .page { break-after: page; display: flex; flex-direction: column; gap: 4.2mm; height: 274mm; overflow: hidden; }
+  .page:last-child { break-after: auto; }
+  h1, h2, h3 { font-family: 'Bricolage Grotesque', 'Arial Black', sans-serif; letter-spacing: -0.01em; }
+  h1 { font-size: 30pt; font-weight: 800; line-height: 1; letter-spacing: -0.02em; }
+  h2 { font-size: 13.5pt; font-weight: 700; line-height: 1.15; margin-bottom: 2mm; }
+  h3 { font-size: 10.5pt; font-weight: 700; line-height: 1.2; }
+  .mono { font-family: 'IBM Plex Mono', 'Courier New', monospace; }
+  .muted { color: var(--tinta-suave); }
+  b { font-weight: 700; }
+
+  .masthead { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 3px double var(--tinta); padding-bottom: 1.6mm; font-family: 'IBM Plex Mono', monospace; font-size: 7.6pt; color: var(--tinta-suave); }
+  .title { display: flex; justify-content: space-between; align-items: flex-end; gap: 6mm; }
+  .title p { font-size: 10.5pt; max-width: 110mm; }
+  .selos { display: flex; gap: 2mm; flex-shrink: 0; }
+  .selo { font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 8pt; letter-spacing: 0.12em; text-transform: uppercase; color: #fff; padding: 1mm 2.2mm; border-radius: 2px; }
+  .selo.fato { background: var(--fato); } .selo.fake { background: var(--fake); }
+
+  .box { background: var(--papel); border-radius: 2.5mm; padding: 3.8mm 4.2mm; }
+  .box.forte { background: var(--papel-2); }
+  .rule { border-top: 1px solid var(--linha); padding-top: 2.8mm; }
+
+  .pira { display: grid; grid-template-columns: repeat(4, 1fr); }
+  .pira > div { padding: 0 3mm; border-left: 1px solid var(--linha); }
+  .pira > div:first-child { padding-left: 0; border-left: none; }
+  .letra { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 26pt; line-height: 1; }
+  .pira h3 { margin: 1mm 0; }
+
+  .duas { display: grid; grid-template-columns: 1fr 1fr; gap: 6mm; }
+  ul.lista { list-style: none; display: flex; flex-direction: column; gap: 1.3mm; }
+  ul.lista li { padding-left: 4mm; position: relative; }
+  ul.lista li::before { content: ""; position: absolute; left: 0; top: 0.55em; width: 1.6mm; height: 1.6mm; background: var(--tinta); border-radius: 50%; }
+
+  .ouro { background: var(--marca); border-radius: 2.5mm; padding: 3.6mm 4.4mm; }
+  .ouro p.big { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 15pt; line-height: 1.15; }
+
+  table { width: 100%; border-collapse: collapse; font-size: 9.2pt; line-height: 1.32; }
+  th { text-align: left; font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 7.6pt; color: var(--tinta-suave); text-transform: uppercase; letter-spacing: 0.06em; padding: 0 2mm 1.3mm 0; border-bottom: 1px solid var(--tinta); }
+  td { padding: 1.7mm 2.5mm 1.7mm 0; border-bottom: 1px solid var(--linha); vertical-align: top; }
+  td:first-child { font-weight: 700; width: 26%; }
+
+  .kit { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3mm 5mm; }
+  .kit > div { display: flex; gap: 2mm; }
+  .num { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 15pt; line-height: 1; min-width: 5mm; }
+
+  .passos { counter-reset: p; display: flex; flex-direction: column; gap: 1.8mm; }
+  .passos li { list-style: none; display: flex; gap: 2.4mm; }
+  .passos li::before { counter-increment: p; content: counter(p); font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 11pt; line-height: 1.15; min-width: 4mm; }
+
+  .contato { display: flex; flex-direction: column; gap: 1.8mm; }
+  .contato p { border-top: 1px solid var(--linha); padding-top: 1.6mm; }
+  .url { font-family: 'IBM Plex Mono', monospace; font-size: 8.6pt; }
+
+  .prompt { display: grid; grid-template-columns: 1fr 32mm; gap: 4mm; align-items: start; }
+  .prompt pre { font-family: 'IBM Plex Mono', monospace; font-size: 7.8pt; line-height: 1.45; white-space: pre-wrap; background: #fff; border: 1px solid var(--linha); border-radius: 2mm; padding: 2.6mm 3mm; }
+  .qr { text-align: center; font-family: 'IBM Plex Mono', monospace; font-size: 7pt; color: var(--tinta-suave); }
+  .qr img { width: 32mm; height: 32mm; display: block; margin-bottom: 1mm; }
+  pre.full { font-family: 'IBM Plex Mono', monospace; font-size: 7.5pt; line-height: 1.36; white-space: pre-wrap; background: var(--papel); border-radius: 2mm; padding: 3.6mm 4mm; }
+
+  .refs { font-size: 8pt; line-height: 1.38; color: var(--tinta-suave); columns: 2; column-gap: 6mm; }
+  .refs p { break-inside: avoid; margin-bottom: 1.2mm; }
+  .refs b { color: var(--tinta); }
+  .rodape { margin-top: auto; font-family: 'IBM Plex Mono', monospace; font-size: 7.2pt; color: var(--tinta-suave); border-top: 1px solid var(--linha); padding-top: 1.6mm; display: flex; justify-content: space-between; }
+</style>
+</head>
+<body>
+
+<!-- PÁGINA 1 -->
+<section class="page">
+  <div class="masthead"><span>Guia de bolso · Fake news e golpes virtuais</span><span>Escola Estadual Marieta Telles Machado · 10/11/2026</span></div>
+
+  <div class="title">
+    <div>
+      <h1>Pare antes de compartilhar</h1>
+      <p class="muted" style="margin-top:2mm">Dicas para não cair em mentira nem em golpe — e para ajudar quem caiu. Guarde este guia ou tire uma foto dele.</p>
+    </div>
+    <div class="selos"><span class="selo fato">Fato</span><span class="selo fake">Fake</span></div>
+  </div>
+
+  <div class="box forte">
+    <h2>Antes de compartilhar, não P.I.R.A.</h2>
+    <div class="pira">
+      <div><p class="letra">P</p><h3>Pare</h3><p>Sentiu raiva, medo, euforia ou pressa? Não compartilhe, não clique, não pague.</p></div>
+      <div><p class="letra">I</p><h3>Investigue a fonte</h3><p>Saia da mensagem. Abra outra aba e pesquise quem publicou.</p></div>
+      <div><p class="letra">R</p><h3>Rastreie a origem</h3><p>Ache a foto original, o vídeo inteiro, a data e o documento.</p></div>
+      <div><p class="letra">A</p><h3>Ache outras fontes</h3><p>Um veículo confiável ou uma agência de checagem confirmou?</p></div>
+    </div>
+  </div>
+
+  <div class="duas">
+    <div>
+      <h2>Saia do site para saber quem ele é</h2>
+      <p>Isso se chama <b>leitura lateral</b>. Em vez de ler o “Sobre nós”, abra outra aba e pesquise o nome do site ou perfil com estas palavras:</p>
+      <p class="mono" style="font-size:8.6pt;margin:1.6mm 0">“quem financia” · “checagem” · “golpe” · “Reclame Aqui”</p>
+      <p class="muted">O próprio site nunca vai dizer que é falso. Checadores profissionais saem dele em segundos — e acertam mais.</p>
+    </div>
+    <div>
+      <h2>Sinais de alerta</h2>
+      <ul class="lista">
+        <li>Título em CAIXA ALTA e cheio de “!!!”</li>
+        <li>“Compartilhe antes que apaguem”</li>
+        <li>Sem data, sem autor, sem link</li>
+        <li>“A mídia não quer que você saiba”</li>
+        <li>Áudio de “um médico” ou “um amigo da polícia” sem nome</li>
+        <li>Foto boa demais; erros de português num site que imita jornal</li>
+      </ul>
+      <p class="muted" style="margin-top:1.4mm"><i>Um sinal sozinho não prova nada: é motivo para checar.</i></p>
+    </div>
+  </div>
+
+  <div class="duas">
+    <div>
+      <h2>Três armadilhas do cérebro</h2>
+      <p style="margin-bottom:1.6mm"><b>Emoção forte = sinal amarelo.</b> Mentiras se espalham mais rápido porque causam surpresa, raiva ou nojo.</p>
+      <p style="margin-bottom:1.6mm"><b>“Vi em todo lugar” não é prova.</b> Repetir uma mentira faz ela parecer verdade, até para quem sabe a resposta.</p>
+      <p><b>Seu olho não detecta deepfake.</b> Na média, as pessoas acertam pouco mais que cara ou coroa. Cheque a origem. <span class="muted">(Deepfake: imagem, vídeo ou voz falsos feitos com IA.)</span></p>
+    </div>
+    <div>
+      <h2>Ferramentas grátis</h2>
+      <table>
+        <tr><th>Ferramenta</th><th>Para quê</th></tr>
+        <tr><td>Google Lens</td><td>Descobrir onde e quando uma foto já apareceu</td></tr>
+        <tr><td>TinEye</td><td>Achar a primeira aparição de uma imagem (filtre por “Oldest”)</td></tr>
+        <tr><td>Fact Check Explorer</td><td>Ver se alguma agência já checou o assunto (do Google)</td></tr>
+        <tr><td>InVID-WeVerify</td><td>Checar se um vídeo “de agora” é antigo</td></tr>
+        <tr><td>Agências</td><td>Agência Lupa, Aos Fatos, Projeto Comprova, Fato ou Fake (g1), Estadão Verifica</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="ouro">
+    <p class="big">Pressa + pedido de código, Pix ou dados = pare e confirme por outro canal.</p>
+    <p style="margin-top:1mm">Ligue para o número que você já tinha, fale pessoalmente ou abra o app oficial. Nunca confirme pela mesma conversa.</p>
+  </div>
+
+  <div class="rodape"><span>Pare antes de compartilhar · 1 de 4</span><span>Vire a página: golpes e proteção →</span></div>
+</section>
+
+<!-- PÁGINA 2 -->
+<section class="page">
+  <div class="masthead"><span>Guia de bolso · Fake news e golpes virtuais</span><span>Escola Estadual Marieta Telles Machado · 10/11/2026</span></div>
+
+  <div>
+    <h2>Golpes mais comuns entre jovens</h2>
+    <table>
+      <tr><th>Golpe</th><th>Sinal de alerta</th><th>Como se proteger</th></tr>
+      <tr><td>Invasão de conta</td><td>Pedem “o código que chegou por engano”</td><td>Código não se passa para ninguém. Ative a verificação em duas etapas.</td></tr>
+      <tr><td>Skins, diamantes e Robux grátis</td><td>“Gerador”, “só logar aqui”, link encurtado</td><td>Login só no app ou site oficial do jogo.</td></tr>
+      <tr><td>Falso sorteio</td><td>Você “ganhou” sem participar; pedem frete ou taxa</td><td>Prêmio de verdade não cobra nada.</td></tr>
+      <tr><td>Pix para “amigo” ou parente</td><td>Número novo, pressa, conta de outra pessoa</td><td>Ligue para o número antigo. Combine uma palavra-senha com a família.</td></tr>
+      <tr><td>Falsa vaga ou jovem aprendiz</td><td>Salário alto; cobram “kit”, “curso” ou “cadastro”</td><td>Empresa séria não cobra para contratar.</td></tr>
+      <tr><td>Tarefa paga (curtir vídeos)</td><td>Paga centavos e depois pede depósito para “nível VIP”</td><td>Se precisa pagar para ganhar, é golpe.</td></tr>
+      <tr><td>Apostas, bets e “tigrinho”</td><td>Influenciador mostrando ganhos; “plataforma pagando”</td><td>Proibido para menores de 18. Aposta não é investimento.</td></tr>
+      <tr><td>Loja falsa</td><td>Preço muito abaixo do mercado; só aceita Pix</td><td>Pesquise o site + “golpe” e confira o CNPJ.</td></tr>
+      <tr><td>SMS ou WhatsApp com link</td><td>“Pacote retido”, “CPF bloqueado”, “pontos vão expirar”</td><td>Não clique. Abra o app oficial direto.</td></tr>
+      <tr><td>Famoso em anúncio</td><td>Celebridade indicando aposta, cripto ou remédio milagroso</td><td>Presuma golpe. Confira no perfil verificado.</td></tr>
+    </table>
+  </div>
+
+  <div class="box forte">
+    <h2>Kit básico de proteção</h2>
+    <div class="kit">
+      <div><span class="num">1</span><p>Verificação em duas etapas em <b>todas</b> as contas (no WhatsApp: PIN de 6 dígitos).</p></div>
+      <div><span class="num">2</span><p>Senhas longas e diferentes: uma frase. Se puder, use um gerenciador de senhas.</p></div>
+      <div><span class="num">3</span><p>Perfil privado. Nada de escola, endereço ou rotina nos posts.</p></div>
+      <div><span class="num">4</span><p>Código de verificação não se passa para <b>ninguém</b>.</p></div>
+      <div><span class="num">5</span><p>Limite noturno de Pix baixo no app do banco.</p></div>
+      <div><span class="num">6</span><p>Palavra-senha com a família contra golpes de voz clonada.</p></div>
+    </div>
+  </div>
+
+  <div class="duas">
+    <div>
+      <h2>Desconfiar de tudo também atrapalha</h2>
+      <p>Quem não confia em fonte nenhuma erra mais. O objetivo não é desconfiar mais: é <b>confiar melhor</b> — saber em quem confiar e como conferir.</p>
+    </div>
+    <div>
+      <h2>Para corrigir alguém</h2>
+      <p>Use o <b>sanduíche da verdade</b>: comece pelo fato, cite o mito uma vez só, explique por que é falso e termine repetindo o fato. De preferência, em particular.</p>
+    </div>
+  </div>
+
+  <div class="rodape"><span>Pare antes de compartilhar · 2 de 4</span><span>Continua: se você cair e onde pedir ajuda →</span></div>
+</section>
+
+<!-- PÁGINA 3 -->
+<section class="page">
+  <div class="masthead"><span>Guia de bolso · Fake news e golpes virtuais</span><span>Escola Estadual Marieta Telles Machado · 10/11/2026</span></div>
+
+  <div class="duas">
+    <div>
+      <h2>Caiu num golpe? Aja rápido</h2>
+      <ol class="passos">
+        <li><span><b>Conte para um adulto de confiança.</b> A vergonha só ajuda o golpista. A culpa é de quem aplicou o golpe.</span></li>
+        <li><span><b>Perdeu dinheiro no Pix?</b> Conteste já pelo MED, no app do banco. A devolução depende de ainda haver saldo, então a pressa importa.</span></li>
+        <li><span><b>Faça um boletim de ocorrência</b> na Delegacia Virtual do seu estado. Guarde prints, links e comprovantes.</span></li>
+        <li><span><b>Conta invadida?</b> Use a recuperação oficial do app, avise seus contatos e ative as duas etapas.</span></li>
+        <li><span><b>Aconteceu na escola?</b> Avise a coordenação. A vítima precisa de proteção, não de exposição.</span></li>
+      </ol>
+    </div>
+    <div>
+      <h2>Se alguém te ameaçar com foto íntima</h2>
+      <p><b>Não pague. Não mande mais nada. Não apague as provas. Conte para um adulto.</b></p>
+      <p style="margin-top:1.6mm">Nude falso feito por IA não é brincadeira: criar, pedir ou repassar é violência e, com vítima menor de idade, é crime (ECA, art. 241-C). Recebeu? Não repasse — denuncie e apoie a vítima.</p>
+      <p style="margin-top:1.6mm"><b>A culpa nunca é da vítima.</b></p>
+    </div>
+  </div>
+
+  <div class="box">
+    <h2>Deepfake e IA</h2>
+    <div class="duas">
+      <p><b>Voz clonada:</b> um áudio “da sua mãe” pedindo Pix pode ter sido feito com IA a partir de poucos segundos da voz real. Combine uma palavra-senha com a família e ligue de volta.</p>
+      <p><b>IA como fonte:</b> chatbots “alucinam” — inventam fatos, links e referências com toda a confiança. Use a IA para organizar a checagem, nunca como prova final.</p>
+    </div>
+  </div>
+
+  <div class="contato">
+    <h2 style="margin-bottom:0.6mm">Onde pedir ajuda</h2>
+    <div class="duas">
+      <div class="contato">
+        <p><b>Canal de Ajuda da SaferNet</b> — chat e e-mail, grátis e sigiloso<br><span class="url">canaldeajuda.org.br</span></p>
+        <p><b>Central de Denúncias</b> — anônima, para conteúdo de abuso<br><span class="url">denuncie.org.br</span></p>
+      </div>
+      <div class="contato">
+        <p><b>Delegacia Virtual</b> do seu estado<br><span class="muted">boletim de ocorrência online</span></p>
+        <p><b>Conselho Tutelar</b><br><span class="muted">quando a vítima é menor de idade</span></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="box forte">
+    <h2>Leve um checador no bolso</h2>
+    <div class="prompt">
+      <div>
+        <p style="margin-bottom:1.6mm">Copie este prompt curto na IA do seu celular (até a Meta AI do WhatsApp serve):</p>
+        <pre>Cheque isto como um checador de fatos. Se não puder pesquisar na web, avise. Separe as afirmações, procure a fonte original e agências de checagem (Lupa, Aos Fatos, Comprova, Fato ou Fake, Estadão Verifica). Aponte sinais de manipulação, de IA e de golpe (pedido de Pix, código, dados ou link). Dê o veredito: verdadeiro, falso, enganoso, fora de contexto ou sem evidências, com nível de confiança. Liste as fontes com links, sem inventar nada. Responda em linguagem simples.
+Conteúdo: [COLE AQUI]</pre>
+      </div>
+      <div class="qr"><img src="qr-prompt-completo-txt.png" alt="QR code do prompt completo">aponte a câmera para o prompt completo</div>
+    </div>
+    <p style="margin-top:2mm"><b>A IA também erra:</b> abra os links que ela citar e confirme numa agência. Nunca cole senha, código, dados do banco ou foto íntima.</p>
+  </div>
+
+  <div class="rodape"><span>Pare antes de compartilhar · 3 de 4</span><span>Vire a página: o prompt completo e as fontes →</span></div>
+</section>
+
+<!-- PÁGINA 4 -->
+<section class="page">
+  <div class="masthead"><span>Guia de bolso · Fake news e golpes virtuais</span><span>Escola Estadual Marieta Telles Machado · 10/11/2026</span></div>
+
+  <div>
+    <h2>Prompt completo para checar com IA</h2>
+    <p class="muted" style="margin-bottom:2.2mm">Pegue pelo QR code da página anterior ou digite na IA que você usa (ChatGPT, Gemini, Claude, Copilot, Meta AI). Troque [COLE AQUI] pelo que você quer checar.</p>
+    <pre class="full">Você é um checador de fatos cuidadoso e honesto. Quero verificar o conteúdo abaixo. Siga estes passos e responda em português simples, como se explicasse para um estudante do ensino médio.
+
+0. ACESSO À WEB: Se você puder pesquisar na internet, pesquise antes de responder. Se NÃO tiver acesso à busca na web, diga isso logo na primeira linha e avise que sua análise é limitada ao que você já sabe, podendo estar desatualizada.
+
+1. AFIRMAÇÕES: Liste separadamente cada afirmação que pode ser verificada (quem, o quê, quando, onde, números). Separe fatos de opiniões.
+
+2. MÉTODO SIFT / LEITURA LATERAL: Para cada afirmação:
+   - Investigue a FONTE: quem publicou/assinou? É um veículo, órgão ou pessoa real e confiável? O que outras fontes dizem sobre essa fonte?
+   - Encontre COBERTURA MELHOR: veículos jornalísticos reconhecidos, órgãos oficiais e agências de checagem (Lupa, Aos Fatos, Projeto Comprova, Fato ou Fake/g1, Estadão Verifica, AFP Checamos, entre outras) já trataram disso?
+   - RASTREIE a origem: qual é a fonte primária (documento, estudo, dado oficial, vídeo/foto original, data e local reais)?
+
+3. SINAIS DE MANIPULAÇÃO: Aponte se houver apelo emocional exagerado, urgência ("compartilhe antes que apaguem"), ausência de data, autor ou fonte, título que não bate com o conteúdo, contexto distorcido, imagem ou vídeo antigo/de outro lugar, possível conteúdo gerado ou alterado por IA (deepfake de imagem, vídeo ou voz), ou imitação de veículo/perfil real.
+
+4. SINAIS DE GOLPE: Se o conteúdo pedir dinheiro, Pix, dados pessoais, senha, código de verificação, cliques em link, cadastro, depósito para "liberar" prêmio/salário, ou prometer ganho fácil (aposta, tarefa paga, sorteio, vaga), diga claramente se há sinais de golpe, quais são, e o que a pessoa deve fazer (não clicar, não pagar, não passar códigos, confirmar por outro canal, avisar um adulto, procurar o banco/MED, SaferNet).
+
+5. VEREDITO: Para cada afirmação e no geral, dê UM destes rótulos: VERDADEIRO / FALSO / ENGANOSO / FORA DE CONTEXTO / SEM EVIDÊNCIAS SUFICIENTES. Informe seu NÍVEL DE CONFIANÇA (alto, médio ou baixo) e explique o porquê em 1 a 3 frases.
+
+6. FONTES: Liste as fontes que você realmente consultou, com links. NÃO invente fontes, links, datas ou citações. Se não encontrou nada confiável, diga "não encontrei fontes confiáveis" em vez de adivinhar. Indique o que continua incerto.
+
+7. PRÓXIMO PASSO: Sugira 1 ou 2 ações simples para eu mesmo confirmar (ex.: busca reversa da imagem no Google Lens, procurar no Google Fact Check Explorer, ver o perfil oficial).
+
+CONTEÚDO PARA CHECAR (texto, link, transcrição do áudio ou descrição do print/imagem):
+"""
+[COLE AQUI]
+"""
+Onde e quando recebi (opcional): [ex.: grupo da família no WhatsApp, hoje]</pre>
+  </div>
+
+  <div class="rule">
+    <h2>De onde vêm estas dicas</h2>
+    <div class="refs">
+      <p><b>Leitura lateral:</b> Wineburg et al. (2022), Journal of Educational Psychology; Wineburg &amp; McGrew (2019), Teachers College Record. Método SIFT, de Mike Caulfield.</p>
+      <p><b>Mentira se espalha mais rápido:</b> Vosoughi, Roy &amp; Aral (2018), Science.</p>
+      <p><b>A pergunta “isso é verdade?”:</b> Pennycook &amp; Rand (2019), Cognition; Pennycook et al. (2021), Nature.</p>
+      <p><b>Repetição parece verdade:</b> Fazio et al. (2015), J. Exp. Psychology: General; Fazio &amp; Sherry (2020), Psychological Science.</p>
+      <p><b>Deepfakes:</b> Diel et al. (2024), Computers in Human Behavior Reports (meta-análise de 56 estudos).</p>
+      <p><b>Corrigir sem reforçar o mito:</b> Ecker et al. (2022), Nature Reviews Psychology; Lewandowsky et al., Debunking Handbook (2020).</p>
+      <p><b>Gatilhos dos golpes:</b> Oliveira et al. (2017) e Sheng et al. (2010), CHI; Ho et al. (2025), IEEE Symposium on Security and Privacy.</p>
+      <p><b>Tipos de desinformação:</b> Wardle &amp; Derakhshan (2017), Information Disorder, Conselho da Europa.</p>
+      <p><b>Dados do Brasil:</b> Painel TIC Integridade da Informação e TIC Kids Online Brasil 2025 (Cetic.br); Anuário Brasileiro de Segurança Pública 2026 (FBSP); Observatório Febraban (2025).</p>
+      <p><b>Leis e canais de ajuda:</b> SaferNet Brasil; ECA, art. 241-C; Lei 15.123/2025; Banco Central, Resolução BCB nº 493/2025 (MED 2.0).</p>
+    </div>
+  </div>
+
+  <div class="rodape"><span>Pare antes de compartilhar · 4 de 4</span><span>Palestra de Alex Manoel Ferreira Silva</span></div>
+</section>
+
+</body>
+</html>

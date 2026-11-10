@@ -30,6 +30,9 @@ Estes endereços abrem só o texto do prompt, sem a página do GitHub:
 
 Se editar um prompt, altere o `.md` e o `.txt` juntos.
 
+### Guia do aluno (`guia-do-aluno/`)
+Guia de bolso impresso, 4 páginas A4: [`guia-pare-antes-de-compartilhar.pdf`](guia-do-aluno/guia-pare-antes-de-compartilhar.pdf), com a fonte editável em HTML. Detalhes em [`guia-do-aluno/README.md`](guia-do-aluno/README.md).
+
 ### Design system (`design-system/verifica/`)
 Tokens (`tokens.json`), guia (`README.md`), capa (`components/Cover/preview.html`) e índice (`design-system.json`) do sistema visual "Verifica": um jornal de papel sendo checado.
 
