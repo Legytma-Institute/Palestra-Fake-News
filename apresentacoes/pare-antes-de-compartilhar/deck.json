@@ -1,0 +1,37 @@
+{
+  "v": 4,
+  "createdOnFiles": { "v": 1, "at": "2026-11-10T00:15:00Z" },
+  "lists": "css",
+  "title": "Pare antes de compartilhar",
+  "cover": "cover",
+  "order": [
+    "cover", "real-ou-ia", "acaso", "golpes-hora", "jovens", "ninguem",
+    "tres-tipos", "sete-formatos", "onde-chega",
+    "emocao", "desacelerar", "repeticao", "sanduiche",
+    "pira", "lateral", "dinamica-lateral", "sinais", "ferramentas",
+    "quiz-intro", "quiz-pix", "quiz-vacina", "quiz-voz", "quiz-urna", "quiz-medico", "desconfiar-tudo",
+    "olho", "voz-famoso", "deepnudes", "ia-fonte",
+    "gatilhos", "regras-fixas", "golpes-contas", "golpes-dinheiro", "falso-parente", "sextorsao", "dinamica-golpe", "regra-ouro", "kit",
+    "se-cair", "ajuda",
+    "prompt-ia", "mensagens", "fim"
+  ],
+  "sections": {
+    "s1": { "description": "Abertura: o teste “real ou IA?” e os números que mostram por que o tema importa.", "start": "cover" },
+    "s2": { "description": "O que é desinformação: três tipos, sete formatos e onde ela chega até os jovens.", "start": "tres-tipos" },
+    "s3": { "description": "Por que acreditamos: emoção, pressa, repetição e como corrigir alguém.", "start": "emocao" },
+    "s4": { "description": "Como identificar: o checklist P.I.R.A., a leitura lateral e ferramentas grátis.", "start": "pira" },
+    "s5": { "description": "Quiz fato ou fake com casos reais já checados.", "start": "quiz-intro" },
+    "s6": { "description": "IA e deepfakes: limites do olho humano, voz clonada, nudes falsos e IA como fonte.", "start": "olho" },
+    "s7": { "description": "Golpes virtuais: gatilhos, golpes comuns entre adolescentes, dinâmica e kit de proteção.", "start": "gatilhos" },
+    "s8": { "description": "O que fazer se cair num golpe e onde pedir ajuda.", "start": "se-cair" },
+    "s9": { "description": "Fechamento: prompt de IA para levar, mensagens-chave e perguntas.", "start": "prompt-ia" }
+  },
+  "faces": {
+    "bricolage-grotesque": { "family": "Bricolage Grotesque", "href": "https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600..800&display=swap" },
+    "atkinson-hyperlegible": { "family": "Atkinson Hyperlegible", "href": "https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" },
+    "ibm-plex-mono": { "family": "IBM Plex Mono", "href": "https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&display=swap" }
+  },
+  "designSystems": [
+    { "title": "Verifica", "namespace": "verifica", "artifact": "https://claude.ai/code/artifact/80c240df-3a00-4143-9072-a2f2bb612a71", "version": "1794269274-e00c", "copiedAt": "2026-11-10T00:15:00Z" }
+  ]
+}

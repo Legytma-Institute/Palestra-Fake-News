@@ -1,0 +1,977 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pare antes de compartilhar</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600..800&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&amp;display=swap">
+<style>
+html,body{margin:0;height:100%;background:#111;overflow:hidden}
+*{box-sizing:border-box} h1,h2,h3,p,ul,ol,table{margin:0}
+.frame{display:none;position:absolute;inset:0}
+.frame.on{display:block}
+.stage{position:absolute;left:50%;top:50%;width:1920px;height:1080px;transform-origin:center}
+.stage>section{position:relative;width:1920px;height:1080px;overflow:hidden}
+.notes{display:none;position:absolute;left:0;right:0;bottom:0;max-height:35%;overflow:auto;
+  background:rgba(0,0,0,.85);color:#eee;font:16px/1.5 system-ui,sans-serif;padding:16px 24px}
+body.show-notes .frame.on .notes{display:block}
+.hud{position:fixed;right:12px;bottom:8px;color:#888;font:12px system-ui,sans-serif}
+</style></head><body>
+<div class="frame"><div class="stage"><section id="cover" data-transition="fade" style="background:#f6f1e7;color:#1b1a17;font-family:'Atkinson Hyperlegible', Verdana, sans-serif;font-size:34px;line-height:1.4;padding:96px;display:flex;flex-direction:column;justify-content:space-between;gap:48px">
+<div style="display:flex;flex-direction:row;justify-content:space-between;align-items:center;border-bottom:4px double #1b1a17;padding:0 0 16px 0">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649">Edição especial · Ensino médio</p>
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649">Fake news e golpes virtuais</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:32px">
+<h1 style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:144px;font-weight:800;line-height:1;letter-spacing:-3px">Pare antes de<br>compartilhar</h1>
+<p style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:42px;font-weight:600;line-height:1.3;color:#5c5649;width:1100px">Como reconhecer uma mentira, escapar de golpes e ajudar quem caiu</p>
+</div>
+<div style="display:flex;flex-direction:row;justify-content:space-between;align-items:center;border-top:1px solid #8f8676;padding:16px 0 0 0">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649">Alex Manoel Ferreira Silva · Escola Estadual Marieta Telles Machado</p>
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649">10/11/2026</p>
+</div>
+<p style="position:absolute;left:1340px;top:320px;width:380px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:56px;font-weight:600;letter-spacing:8px;line-height:1.2;text-transform:uppercase;text-align:center;color:#ffffff;background:#b93d0c;border-radius:2px;padding:16px 24px;transform:rotate(-8deg)">Fake</p>
+<p style="position:absolute;left:1400px;top:520px;width:380px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:56px;font-weight:600;letter-spacing:8px;line-height:1.2;text-transform:uppercase;text-align:center;color:#ffffff;background:#1f5aa6;border-radius:2px;padding:16px 24px;transform:rotate(6deg)">Fato</p>
+
+</section>
+</div><div class="notes">Abertura (1 min). Apresente-se e combine o jeito da aula: o celular pode ficar à mão, porque vamos usar em duas dinâmicas. A palestra dura cerca de 55 a 60 minutos e termina com um prompt de IA e um checklist para levar para casa. Diga logo de cara: a ideia não é ensinar a desconfiar de tudo, e sim a confiar melhor.</div></div><div class="frame"><div class="stage"><section id="real-ou-ia" data-transition="fade" style="background:#f6f1e7;color:#1b1a17;font-family:'Atkinson Hyperlegible', Verdana, sans-serif;font-size:34px;line-height:1.4;padding:96px 96px 144px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px;align-items:start">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649;border:1px solid #8f8676;border-radius:999px;padding:4px 20px">1 · Abertura</p>
+<h2 style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:66px;font-weight:700;line-height:1.14;letter-spacing:-0.66px">Qual destas imagens é real?</h2>
+</div>
+<div style="display:flex;flex-direction:row;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<img src="assets/real-ou-ia-a-gize.jpg" alt="Imagem A: céu noturno azul sobre as pirâmides de Gizé, com três pontos de luz enfileirados" style="width:840px;height:472px;object-fit:cover;border:1px solid #8f8676;border-radius:8px">
+<p style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:42px;font-weight:600;line-height:1.3">Imagem A</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:16px">
+<img src="assets/real-ou-ia-b-etna.jpg" alt="Imagem B: à noite, lava do vulcão Etna em forma de ave de fogo sobre uma cidade iluminada com uma igreja de cúpula" style="width:840px;height:472px;object-fit:cover;border:1px solid #8f8676;border-radius:8px">
+<p style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:42px;font-weight:600;line-height:1.3">Imagem B</p>
+</div>
+</div>
+<p data-build-in="pop 1" style="position:absolute;left:640px;top:300px;width:260px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:48px;font-weight:600;letter-spacing:6px;line-height:1.2;text-transform:uppercase;text-align:center;color:#ffffff;background:#b93d0c;border-radius:2px;padding:12px 20px;transform:rotate(-8deg)">Fake</p>
+<p data-build-in="pop 1" style="position:absolute;left:1528px;top:300px;width:260px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:48px;font-weight:600;letter-spacing:6px;line-height:1.2;text-transform:uppercase;text-align:center;color:#ffffff;background:#1f5aa6;border-radius:2px;padding:12px 20px;transform:rotate(6deg)">Fato</p>
+<p data-build-in="rise 1" style="position:absolute;left:96px;top:840px;width:840px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649">Criação digital: planetas “alinhados” sobre Gizé</p>
+<p data-build-in="rise 1" style="position:absolute;left:984px;top:840px;width:840px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649">Foto de Davide Basile, Etna (Sicília), 19/07/2019</p>
+<p style="position:absolute;left:96px;bottom:48px;width:1728px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649;border-top:1px solid #8f8676;padding:12px 0 0 0">Checagens: Snopes, 23/11/2024 e 17/05/2025 · imagens reproduzidas das checagens para fins de estudo</p>
+
+</section>
+</div><div class="notes">Gancho (2 min). Pergunte: &quot;Uma é foto real. A outra nunca aconteceu. Qual é qual?&quot; Votação com as mãos e anote o placar. Clique para revelar os selos.<br><br>A = FAKE. Planetas &quot;alinhados&quot; sobre as pirâmides de Gizé, que circulou em novembro de 2024 dizendo que o alinhamento só acontece a cada 2.373 anos. Snopes (Aleksandra Wrona, 23/11/2024): imagem criada digitalmente. Um diretor de planetário (Justin Mason, Old Dominion University) explicou as pistas: os &quot;planetas&quot; têm cores estranhas e o mesmo brilho, quando numa foto real Vênus ofuscaria os outros; e o número 2.373 anos não tem fonte. https://www.snopes.com/fact-check/planets-above-giza-pyramids/<br><br>B = FATO. Lava do Etna em forma de &quot;fênix&quot; sobre Riposto, na Sicília. Snopes (Caroline Wazer, 17/05/2025): verdadeira. O fotógrafo Davide Basile confirmou que fez a foto em 19/07/2019, do Molo Costanzo, com edição mínima. Pistas: autor com nome, data e local exatos, e a foto é de 2019, antes dos geradores de imagem populares. https://www.snopes.com/fact-check/phoenix-photo-lava-sicily/<br><br>Ninguém resolveu olhando a foto com mais força: resolveram saindo da foto (um especialista para a falsa, o autor para a verdadeira). O próximo slide mostra o dado dos 55%. A foto de Basile tem direito autoral: use só no slide, com crédito, e não distribua o arquivo.</div></div><div class="frame"><div class="stage"><section id="acaso" data-transition="fade" style="background:#f6f1e7;color:#1b1a17;font-family:'Atkinson Hyperlegible', Verdana, sans-serif;font-size:34px;line-height:1.4;padding:96px 96px 144px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px;align-items:start">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649;border:1px solid #8f8676;border-radius:999px;padding:4px 20px">1 · Abertura</p>
+<h2 style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:66px;font-weight:700;line-height:1.14;letter-spacing:-0.66px">No olho, achar o deepfake é quase cara ou coroa</h2>
+</div>
+<div style="display:flex;flex-direction:row;gap:48px">
+<div style="width:520px;display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:144px;font-weight:800;line-height:1;letter-spacing:-2px">55%</p>
+<p style="font-size:34px;line-height:1.4">de acerto, em média, de 86 mil pessoas</p>
+<p style="font-size:34px;line-height:1.4;color:#5c5649"><b>Deepfake:</b> imagem, vídeo ou voz falsos feitos com IA.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:32px;justify-content:center;border-left:1px solid #8f8676;padding:0 0 0 48px;width:1160px">
+<div style="display:flex;flex-direction:column;gap:8px">
+<p style="font-size:34px;line-height:1.4;color:#5c5649">Jogar uma moeda: <b>50%</b></p>
+<div style="width:550px;height:40px;background:#8f8676;border-radius:2px"></div>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px">
+<p style="font-size:34px;line-height:1.4">Pessoas olhando a imagem: <b>55%</b></p>
+<div style="width:605px;height:40px;background:#1b1a17;border-radius:2px"></div>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px">
+<p style="font-size:34px;line-height:1.4;color:#5c5649">Com treino e ajuda de IA: <b>65%</b></p>
+<div style="width:715px;height:40px;background:#5c5649;border-radius:2px"></div>
+</div>
+</div>
+</div>
+<p style="position:absolute;left:96px;bottom:48px;width:1728px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649;border-top:1px solid #8f8676;padding:12px 0 0 0">Fonte: Diel et al., 2024, Computers in Human Behavior Reports (meta-análise de 56 estudos)</p>
+
+</section>
+</div><div class="notes">Revele a resposta do slide anterior. Uma meta-análise juntou 56 estudos, com 86.155 participantes: a acurácia humana para detectar deepfakes foi de 55,54%, estatisticamente igual ao acaso. O que melhorou o resultado, para cerca de 65%, foi treino com feedback, apoio de IA e ver exemplos exagerados. Mensagem: não dá para confiar no &quot;dá pra ver que é falso&quot;. Vamos aprender a checar a origem, que funciona melhor.</div></div><div class="frame"><div class="stage"><section id="golpes-hora" data-transition="fade" style="background:#f6f1e7;color:#1b1a17;font-family:'Atkinson Hyperlegible', Verdana, sans-serif;font-size:34px;line-height:1.4;padding:96px 96px 144px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px;align-items:start">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649;border:1px solid #8f8676;border-radius:999px;padding:4px 20px">1 · Abertura</p>
+<h2 style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:66px;font-weight:700;line-height:1.14;letter-spacing:-0.66px">Um golpe registrado a cada 14 segundos</h2>
+</div>
+<div style="display:flex;flex-direction:row;gap:48px">
+<div style="width:900px;display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:144px;font-weight:800;line-height:1;letter-spacing:-2px">2.261.055</p>
+<p style="font-size:34px;line-height:1.4">estelionatos registrados no Brasil em 2025, cerca de 258 por hora.</p>
+<p style="font-size:34px;line-height:1.4;color:#5c5649">Só 63.771 viraram processo na Justiça.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:16px;border-left:1px solid #8f8676;padding:0 0 0 48px;width:780px">
+<p style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:144px;font-weight:800;line-height:1;letter-spacing:-2px">39%</p>
+<p style="font-size:34px;line-height:1.4">dos brasileiros dizem já ter sofrido golpe ou tentativa envolvendo a conta do banco.</p>
+<p style="font-size:34px;line-height:1.4;color:#5c5649">É o maior valor já medido.</p>
+</div>
+</div>
+<p style="position:absolute;left:96px;bottom:48px;width:1728px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649;border-top:1px solid #8f8676;padding:12px 0 0 0">Fontes: 20º Anuário Brasileiro de Segurança Pública (FBSP, 2026); Observatório Febraban, jun/2025</p>
+
+</section>
+</div><div class="notes">Golpe já é o crime patrimonial mais comum do Brasil: 2.261.055 estelionatos registrados em 2025, alta de 3,1%. Dá cerca de 258 por hora, ou um a cada 14 segundos. E esse número é menor que o real, porque muita gente não registra ocorrência. Pergunte: quem aqui conhece alguém que já caiu num golpe? (Espere as mãos.) O dado de 39% vem de pesquisa de opinião da Febraban, 17ª edição.</div></div><div class="frame"><div class="stage"><section id="jovens" data-transition="fade" style="background:#f6f1e7;color:#1b1a17;font-family:'Atkinson Hyperlegible', Verdana, sans-serif;font-size:34px;line-height:1.4;padding:96px 96px 144px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px;align-items:start">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649;border:1px solid #8f8676;border-radius:999px;padding:4px 20px">1 · Abertura</p>
+<h2 style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:66px;font-weight:700;line-height:1.14;letter-spacing:-0.66px">Os mais jovens são os que menos conferem</h2>
+</div>
+<div style="display:flex;flex-direction:row;gap:48px">
+<div style="width:900px;display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:144px;font-weight:800;line-height:1;letter-spacing:-2px">10%</p>
+<p style="font-size:34px;line-height:1.4">dos jovens de 16 a 24 anos têm o hábito de checar o que recebem.</p>
+<p style="font-size:34px;line-height:1.4;color:#5c5649">É o menor índice entre todas as faixas de idade.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:16px;border-left:1px solid #8f8676;padding:0 0 0 48px;width:780px">
+<p style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:144px;font-weight:800;line-height:1;letter-spacing:-2px">41%</p>
+<p style="font-size:34px;line-height:1.4">dos internautas dizem ver deepfakes todos os dias.</p>
+<p style="font-size:34px;line-height:1.4;color:#5c5649"><b>Deepfake:</b> imagem, vídeo ou voz falsos feitos com IA.</p>
+</div>
+</div>
+<p style="position:absolute;left:96px;bottom:48px;width:1728px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649;border-top:1px solid #8f8676;padding:12px 0 0 0">Fonte: Painel TIC Integridade da Informação, Cetic.br e Agência Lupa (5.250 internautas, ago–set/2025)</p>
+
+</section>
+</div><div class="notes">Pesquisa com 5.250 internautas de 16 anos ou mais. Só 10% dos jovens de 16 a 24 anos foram classificados como &quot;engajados&quot; em checar informação, o menor índice entre as idades. Não é para culpar ninguém: é para mostrar que este é exatamente o grupo que mais ganha aprendendo a checar. Outro dado útil se alguém perguntar: 65% das crianças e adolescentes de 9 a 17 anos já usaram IA generativa (TIC Kids Online 2025).</div></div><div class="frame"><div class="stage"><section id="ninguem" data-transition="fade" style="background:#f6f1e7;color:#1b1a17;font-family:'Atkinson Hyperlegible', Verdana, sans-serif;font-size:34px;line-height:1.4;padding:96px;display:flex;flex-direction:column;justify-content:center;gap:48px">
+<h1 style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:108px;font-weight:800;line-height:1.05;letter-spacing:-2px">Ninguém aqui é burro por cair.</h1>
+<div style="display:flex;flex-direction:column;gap:16px;align-items:start">
+<p style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:42px;font-weight:600;line-height:1.3;color:#5c5649;width:1300px">Golpes e fake news são feitos por profissionais para enganar cérebros normais. Hoje você vai aprender</p>
+<p style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:42px;font-weight:600;line-height:1.3;background:#ffd23f;padding:4px 16px">os truques deles.</p>
+</div>
+
+</section>
+</div><div class="notes">Mensagem de abertura, com calma. Quem cai num golpe ou repassa uma notícia falsa não é burro: essas mensagens são desenhadas por profissionais para enganar cérebros normais, inclusive de adultos e especialistas. Isso tira a vergonha, que é a maior aliada do golpista, e prepara a turma para ouvir sem ficar na defensiva.</div></div><div class="frame"><div class="stage"><section id="tres-tipos" data-transition="fade" style="background:#f6f1e7;color:#1b1a17;font-family:'Atkinson Hyperlegible', Verdana, sans-serif;font-size:34px;line-height:1.4;padding:96px 96px 144px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px;align-items:start">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649;border:1px solid #8f8676;border-radius:999px;padding:4px 20px">2 · O que é desinformação</p>
+<h2 style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:66px;font-weight:700;line-height:1.14;letter-spacing:-0.66px">“Fake news” são três coisas diferentes</h2>
+</div>
+<div style="display:flex;flex-direction:row;gap:32px">
+<div style="width:554px;background:#e9dfcb;border-radius:8px;padding:48px;display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649">falsa · sem querer</p>
+<h3 style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:42px;font-weight:600;line-height:1.3">Misinformação</h3>
+<p style="font-size:34px;line-height:1.4">Quem passa adiante não sabe que é mentira.</p>
+<p style="font-size:34px;line-height:1.4;color:#5c5649">Ex.: a tia que repassa a corrente achando que ajuda.</p>
+</div>
+<div style="width:554px;background:#e9dfcb;border-radius:8px;padding:48px;display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649">falsa · de propósito</p>
+<h3 style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:42px;font-weight:600;line-height:1.3">Desinformação</h3>
+<p style="font-size:34px;line-height:1.4">Criada ou espalhada para enganar, lucrar ou manipular.</p>
+<p style="font-size:34px;line-height:1.4;color:#5c5649">Ex.: perfil que inventa notícia para ganhar cliques.</p>
+</div>
+<div style="width:554px;background:#e9dfcb;border-radius:8px;padding:48px;display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649">verdadeira · para ferir</p>
+<h3 style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:42px;font-weight:600;line-height:1.3">Malinformação</h3>
+<p style="font-size:34px;line-height:1.4">A informação é real, mas é usada para causar dano.</p>
+<p style="font-size:34px;line-height:1.4;color:#5c5649">Ex.: vazar nudes ou dados pessoais de alguém.</p>
+</div>
+</div>
+<p style="position:absolute;left:96px;bottom:48px;width:1728px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649;border-top:1px solid #8f8676;padding:12px 0 0 0">Fonte: Wardle &amp; Derakhshan, Information Disorder, Conselho da Europa, 2017 (relatório)</p>
+
+</section>
+</div><div class="notes">Bloco 2 (5 min no total). A taxonomia mais usada no mundo troca o termo genérico &quot;fake news&quot; por três categorias. O ponto que mais importa para a turma: a malinformação não é mentira. Vazar nudes ou dados verdadeiros de alguém também é desordem informacional, e causa dano real. Pergunte: em qual das três vocês acham que mais gente cai sem perceber? (Misinformação: a maioria repassa achando que ajuda.)</div></div><div class="frame"><div class="stage"><section id="sete-formatos" data-transition="fade" style="background:#f6f1e7;color:#1b1a17;font-family:'Atkinson Hyperlegible', Verdana, sans-serif;font-size:34px;line-height:1.4;padding:96px 96px 144px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px;align-items:start">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649;border:1px solid #8f8676;border-radius:999px;padding:4px 20px">2 · O que é desinformação</p>
+<h2 style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:66px;font-weight:700;line-height:1.14;letter-spacing:-0.66px">Sete formatos, do mais leve ao mais grave</h2>
+</div>
+<div style="display:flex;flex-direction:row;gap:32px">
+<div style="width:120px;display:flex;flex-direction:column;align-items:center;gap:12px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649;text-align:center">leve</p>
+<div style="width:16px;height:420px;background:linear-gradient(180deg, #e9dfcb 0%, #1b1a17 100%);border-radius:999px"></div>
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649;text-align:center">grave</p>
+</div>
+<table style="width:1576px;font-size:30px;line-height:1.35;color:#1b1a17">
+<tr style="background:#e9dfcb"><th style="width:38%;padding:10px 20px">Formato</th><th style="width:62%;padding:10px 20px">Como aparece</th></tr>
+<tr><td style="padding:10px 20px">1. Sátira ou paródia</td><td style="padding:10px 20px">Piada que alguém leva a sério</td></tr>
+<tr><td style="padding:10px 20px">2. Conexão falsa</td><td style="padding:10px 20px">Título que não bate com o texto</td></tr>
+<tr><td style="padding:10px 20px">3. Conteúdo enganoso</td><td style="padding:10px 20px">Informação real usada para levar a uma conclusão errada</td></tr>
+<tr><td style="padding:10px 20px">4. Contexto falso</td><td style="padding:10px 20px">Foto verdadeira, mas de outro lugar ou de outra época</td></tr>
+<tr><td style="padding:10px 20px">5. Conteúdo impostor</td><td style="padding:10px 20px">Perfil ou site que imita um veículo real</td></tr>
+<tr><td style="padding:10px 20px">6. Conteúdo manipulado</td><td style="padding:10px 20px">Imagem ou vídeo editado</td></tr>
+<tr><td style="padding:10px 20px">7. Conteúdo fabricado</td><td style="padding:10px 20px">Tudo inventado, inclusive deepfakes</td></tr>
+</table>
+</div>
+<p style="position:absolute;left:96px;bottom:48px;width:1728px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649;border-top:1px solid #8f8676;padding:12px 0 0 0">Fonte: Claire Wardle, First Draft</p>
+
+</section>
+</div><div class="notes">Passe rápido pela lista. Destaque o número 4, contexto falso: é um dos mais comuns e engana muito, porque a foto é verdadeira, só que de outro lugar ou de outra época. A busca reversa de imagem, que vamos ver adiante, resolve boa parte desses casos. O 5, conteúdo impostor, é o perfil ou site que copia o visual de um jornal real.</div></div><div class="frame"><div class="stage"><section id="onde-chega" data-transition="fade" style="background:#f6f1e7;color:#1b1a17;font-family:'Atkinson Hyperlegible', Verdana, sans-serif;font-size:34px;line-height:1.4;padding:96px 96px 144px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px;align-items:start">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649;border:1px solid #8f8676;border-radius:999px;padding:4px 20px">2 · O que é desinformação</p>
+<h2 style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:66px;font-weight:700;line-height:1.14;letter-spacing:-0.66px">Onde a mentira chega até você</h2>
+</div>
+<div style="display:flex;flex-direction:row;gap:48px">
+<div style="width:1120px;display:flex;flex-direction:column;gap:16px">
+<p style="font-size:34px;line-height:1.4;border-top:1px solid #8f8676;padding:16px 0 0 0">Vídeo curto com narração confiante e nenhuma fonte</p>
+<p style="font-size:34px;line-height:1.4;border-top:1px solid #8f8676;padding:16px 0 0 0">Print sem link, que ninguém consegue conferir</p>
+<p style="font-size:34px;line-height:1.4;border-top:1px solid #8f8676;padding:16px 0 0 0">Meme: o humor faz a ideia grudar</p>
+<p style="font-size:34px;line-height:1.4;border-top:1px solid #8f8676;padding:16px 0 0 0">Recorte de vídeo fora de contexto</p>
+<p style="font-size:34px;line-height:1.4;border-top:1px solid #8f8676;padding:16px 0 0 0">Influenciador vendendo curso, aposta ou “método”</p>
+</div>
+<div style="width:560px;background:#e9dfcb;border-radius:8px;padding:48px;display:flex;flex-direction:column;gap:16px;align-self:start">
+<p style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:144px;font-weight:800;line-height:1;letter-spacing:-2px">17%</p>
+<p style="font-size:34px;line-height:1.4">dos jovens de 16 a 24 anos se informam <b>só</b> por redes sociais e apps de mensagem.</p>
+</div>
+</div>
+<p style="position:absolute;left:96px;bottom:48px;width:1728px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649;border-top:1px solid #8f8676;padding:12px 0 0 0">Fonte: Painel TIC Integridade da Informação, Cetic.br e Agência Lupa, 2026</p>
+
+</section>
+</div><div class="notes">Pergunte: de onde vocês tiram as notícias? Ouça algumas respostas. Os formatos da lista são os que mais pegam jovens. Contexto Brasil: o WhatsApp foi o principal canal de desinformação nas eleições de 2018, e estudos com grupos públicos mostraram que imagens já desmentidas continuavam circulando depois da checagem (Machado et al., 2019; Resende et al., 2019). Ou seja: o desmentido nem sempre alcança quem viu a mentira.</div></div><div class="frame"><div class="stage"><section id="emocao" data-transition="fade" style="background:#f6f1e7;color:#1b1a17;font-family:'Atkinson Hyperlegible', Verdana, sans-serif;font-size:34px;line-height:1.4;padding:96px 96px 144px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px;align-items:start">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649;border:1px solid #8f8676;border-radius:999px;padding:4px 20px">3 · Por que acreditamos</p>
+<h2 style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:66px;font-weight:700;line-height:1.14;letter-spacing:-0.66px">Raiva, medo ou espanto? Hora de desconfiar.</h2>
+</div>
+<div style="display:flex;flex-direction:row;gap:48px">
+<div style="width:820px;display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:144px;font-weight:800;line-height:1;letter-spacing:-2px">70%</p>
+<p style="font-size:34px;line-height:1.4">mais chance de uma notícia falsa ser repassada no Twitter do que uma verdadeira.</p>
+</div>
+<div style="width:860px;display:flex;flex-direction:column;gap:16px;border-left:1px solid #8f8676;padding:0 0 0 48px">
+<h3 style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:42px;font-weight:600;line-height:1.3">Por quê?</h3>
+<p style="font-size:34px;line-height:1.4">As falsas pareciam mais novidade e causavam surpresa e nojo.</p>
+<p style="font-size:34px;line-height:1.4">E quem mais espalhava eram pessoas, não robôs.</p>
+</div>
+</div>
+<p style="position:absolute;left:96px;bottom:48px;width:1728px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649;border-top:1px solid #8f8676;padding:12px 0 0 0">Fonte: Vosoughi, Roy &amp; Aral, 2018, Science (cerca de 126 mil cascatas no Twitter)</p>
+
+</section>
+</div><div class="notes">Bloco 3 (7 min no total). Estudo publicado na Science: as notícias falsas foram mais longe, mais rápido e mais fundo que as verdadeiras. As verdadeiras provocavam mais tristeza, expectativa e confiança; as falsas, surpresa e nojo. Robôs espalharam verdade e mentira na mesma proporção: quem acelerou a mentira foram humanos. Moral para a turma: se a mensagem te deixou com raiva, medo ou espanto, é exatamente a hora de parar.</div></div><div class="frame"><div class="stage"><section id="desacelerar" data-transition="fade" style="background:#f6f1e7;color:#1b1a17;font-family:'Atkinson Hyperlegible', Verdana, sans-serif;font-size:34px;line-height:1.4;padding:96px 96px 144px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px;align-items:start">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649;border:1px solid #8f8676;border-radius:999px;padding:4px 20px">3 · Por que acreditamos</p>
+<h2 style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:66px;font-weight:700;line-height:1.14;letter-spacing:-0.66px">Muita gente compartilha sem nem pensar</h2>
+</div>
+<div style="display:flex;flex-direction:row;gap:32px">
+<div style="width:848px;background:#e9dfcb;border-radius:8px;padding:48px;display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649">pensar devagar</p>
+<h3 style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:42px;font-weight:600;line-height:1.3">Quem desacelera erra menos</h3>
+<p style="font-size:34px;line-height:1.4">Quem pensa com calma acredita menos em manchetes falsas — até nas que favorecem o próprio lado.</p>
+</div>
+<div style="width:848px;background:#e9dfcb;border-radius:8px;padding:48px;display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649">uma pergunta</p>
+<h3 style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:42px;font-weight:600;line-height:1.3">“Isso é verdade?”</h3>
+<p style="font-size:34px;line-height:1.4">Só lembrar de fazer essa pergunta antes de compartilhar já melhorou o que as pessoas espalharam, inclusive num teste real no Twitter.</p>
+</div>
+</div>
+<p style="position:absolute;left:96px;bottom:48px;width:1728px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649;border-top:1px solid #8f8676;padding:12px 0 0 0">Fontes: Pennycook &amp; Rand, 2019, Cognition; Pennycook et al., 2021, Nature</p>
+
+</section>
+</div><div class="notes">Dois estudos com 3.446 pessoas: quem pensa de forma mais analítica acreditou menos em manchetes falsas, inclusive nas que favoreciam o próprio lado político. Há debate: outros autores mostram que acreditar no que agrada ao seu grupo também pesa. Mas a conclusão prática serve para os dois lados: desacelerar ajuda. O segundo estudo mostra que muita gente compartilha sem nem pensar se é verdade; só lembrar a pergunta já muda o clique.</div></div><div class="frame"><div class="stage"><section id="repeticao" data-transition="fade" style="background:#f6f1e7;color:#1b1a17;font-family:'Atkinson Hyperlegible', Verdana, sans-serif;font-size:34px;line-height:1.4;padding:96px 96px 144px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px;align-items:start">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649;border:1px solid #8f8676;border-radius:999px;padding:4px 20px">3 · Por que acreditamos</p>
+<h2 style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:66px;font-weight:700;line-height:1.14;letter-spacing:-0.66px">“Vi em todo lugar” não é prova</h2>
+</div>
+<div style="display:flex;flex-direction:row;gap:64px">
+<div style="width:820px;display:flex;flex-direction:column;gap:24px">
+<h3 style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:42px;font-weight:600;line-height:1.3">Repetição parece verdade</h3>
+<p style="font-size:34px;line-height:1.4">Ver algo várias vezes aumenta a sensação de que é verdade — mesmo quando você sabe a resposta certa.</p>
+<p style="font-size:34px;line-height:1.4;color:#5c5649">Acontece desde os 5 anos de idade. Saber do assunto não protege.</p>
+</div>
+<div style="width:844px;display:flex;flex-direction:column;gap:24px">
+<div style="background:#e9dfcb;border:1px solid #8f8676;border-radius:8px;padding:24px 32px;display:flex;flex-direction:column;gap:4px;width:620px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649">1ª vez que você vê</p>
+<p style="font-size:34px;line-height:1.4">“Hum, será?”</p>
+</div>
+<div style="background:#e9dfcb;border:1px solid #8f8676;border-radius:8px;padding:24px 32px;display:flex;flex-direction:column;gap:4px;width:620px;transform:translateX(112px)">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649">5ª vez</p>
+<p style="font-size:34px;line-height:1.4">“Acho que já ouvi isso.”</p>
+</div>
+<div style="background:#e9dfcb;border:1px solid #8f8676;border-radius:8px;padding:24px 32px;display:flex;flex-direction:column;gap:4px;width:620px;transform:translateX(224px)">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649">20ª vez</p>
+<p style="font-size:34px;line-height:1.4"><b>“Todo mundo sabe.”</b></p>
+</div>
+</div>
+</div>
+<p style="position:absolute;left:96px;bottom:48px;width:1728px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649;border-top:1px solid #8f8676;padding:12px 0 0 0">Fontes: Fazio et al., 2015, J Exp Psychol Gen; Fazio &amp; Sherry, 2020, Psychological Science</p>
+
+</section>
+</div><div class="notes">Efeito da verdade ilusória. Em experimentos, repetir uma frase aumentou a crença nela mesmo quando a pessoa sabia a resposta correta. Crianças de 5 e 10 anos e adultos foram igualmente afetados, e o conhecimento prévio não protegeu. É por isso que a mesma corrente aparece em vários grupos: cada repetição deixa a mentira mais familiar. Moral: &quot;vi em todo lugar&quot; não é prova; &quot;vi numa fonte confiável&quot; é.</div></div><div class="frame"><div class="stage"><section id="sanduiche" data-transition="fade" style="background:#f6f1e7;color:#1b1a17;font-family:'Atkinson Hyperlegible', Verdana, sans-serif;font-size:34px;line-height:1.4;padding:96px 96px 144px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px;align-items:start">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649;border:1px solid #8f8676;border-radius:999px;padding:4px 20px">3 · Por que acreditamos</p>
+<h2 style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:66px;font-weight:700;line-height:1.14;letter-spacing:-0.66px">O sanduíche da verdade</h2>
+</div>
+<div style="display:flex;flex-direction:column;gap:32px">
+<p style="font-size:34px;line-height:1.4;color:#5c5649;width:1500px">A mentira deixa marca mesmo depois de desmentida. Por isso, prevenir é melhor — e, para corrigir alguém, tem jeito certo:</p>
+<div style="display:flex;flex-direction:column;gap:16px">
+<div style="display:flex;flex-direction:row;align-items:center;gap:32px;background:#e9dfcb;border-radius:8px;padding:24px 32px">
+<div style="width:200px;display:flex;flex-direction:column;align-items:start"><p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;font-weight:600;letter-spacing:3px;line-height:1.2;text-transform:uppercase;color:#ffffff;background:#1f5aa6;border-radius:2px;padding:8px 16px">Fato</p></div>
+<p style="font-size:34px;line-height:1.4"><b>1.</b> Comece pelo fato.</p>
+</div>
+<div style="display:flex;flex-direction:row;align-items:center;gap:32px;background:#e9dfcb;border-radius:8px;padding:24px 32px">
+<div style="width:200px;display:flex;flex-direction:column;align-items:start"><p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;font-weight:600;letter-spacing:3px;line-height:1.2;text-transform:uppercase;color:#ffffff;background:#b93d0c;border-radius:2px;padding:8px 16px">Fake</p></div>
+<p style="font-size:34px;line-height:1.4"><b>2.</b> Avise sobre o mito — uma vez só.</p>
+</div>
+<div style="display:flex;flex-direction:row;align-items:center;gap:32px;background:#e9dfcb;border-radius:8px;padding:24px 32px">
+<div style="width:200px;display:flex;flex-direction:column;align-items:start"><p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.2;color:#5c5649;padding:8px 0">por quê</p></div>
+<p style="font-size:34px;line-height:1.4"><b>3.</b> Explique por que ele é falso.</p>
+</div>
+<div style="display:flex;flex-direction:row;align-items:center;gap:32px;background:#e9dfcb;border-radius:8px;padding:24px 32px">
+<div style="width:200px;display:flex;flex-direction:column;align-items:start"><p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;font-weight:600;letter-spacing:3px;line-height:1.2;text-transform:uppercase;color:#ffffff;background:#1f5aa6;border-radius:2px;padding:8px 16px">Fato</p></div>
+<p style="font-size:34px;line-height:1.4"><b>4.</b> Termine repetindo o fato.</p>
+</div>
+</div>
+</div>
+<p style="position:absolute;left:96px;bottom:48px;width:1728px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649;border-top:1px solid #8f8676;padding:12px 0 0 0">Fontes: Ecker et al., 2022, Nature Reviews Psychology; Lewandowsky et al., Debunking Handbook, 2020</p>
+
+</section>
+</div><div class="notes">Efeito de influência continuada: as pessoas continuam usando a informação falsa mesmo depois de ver o desmentido. Por isso prevenir (prebunking) é melhor que remediar (debunking) — e a palestra de hoje é prevenção. Quando for corrigir alguém, por exemplo no grupo da família, use o sanduíche: comece pelo fato, cite o mito uma vez só (repetir reforça, lembra?), explique por que é falso e termine com o fato de novo. Dica: corrigir em particular costuma funcionar melhor do que expor a pessoa no grupo.</div></div><div class="frame"><div class="stage"><section id="pira" data-transition="fade" style="background:#f6f1e7;color:#1b1a17;font-family:'Atkinson Hyperlegible', Verdana, sans-serif;font-size:34px;line-height:1.4;padding:96px 96px 144px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px;align-items:start">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649;border:1px solid #8f8676;border-radius:999px;padding:4px 20px">4 · Como identificar</p>
+<h2 style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:66px;font-weight:700;line-height:1.14;letter-spacing:-0.66px">Antes de compartilhar, não P.I.R.A.</h2>
+</div>
+<div style="display:flex;flex-direction:row">
+<div style="width:432px;display:flex;flex-direction:column;gap:16px;padding:0 32px 0 0">
+<p style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:144px;font-weight:800;line-height:1;letter-spacing:-2px">P</p>
+<h3 style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:42px;font-weight:600;line-height:1.3">Pare</h3>
+<p style="font-size:34px;line-height:1.4">Sentiu raiva, medo, euforia ou pressa? Não compartilhe, não clique, não pague.</p>
+</div>
+<div style="width:432px;display:flex;flex-direction:column;gap:16px;border-left:1px solid #8f8676;padding:0 32px">
+<p style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:144px;font-weight:800;line-height:1;letter-spacing:-2px">I</p>
+<h3 style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:42px;font-weight:600;line-height:1.3">Investigue a fonte</h3>
+<p style="font-size:34px;line-height:1.4">Saia da mensagem. Abra outra aba e pesquise quem publicou.</p>
+</div>
+<div style="width:432px;display:flex;flex-direction:column;gap:16px;border-left:1px solid #8f8676;padding:0 32px">
+<p style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:144px;font-weight:800;line-height:1;letter-spacing:-2px">R</p>
+<h3 style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:42px;font-weight:600;line-height:1.3">Rastreie a origem</h3>
+<p style="font-size:34px;line-height:1.4">Ache a foto original, o vídeo inteiro, a data e o documento.</p>
+</div>
+<div style="width:432px;display:flex;flex-direction:column;gap:16px;border-left:1px solid #8f8676;padding:0 0 0 32px">
+<p style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:144px;font-weight:800;line-height:1;letter-spacing:-2px">A</p>
+<h3 style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:42px;font-weight:600;line-height:1.3">Ache outras fontes</h3>
+<p style="font-size:34px;line-height:1.4">Um veículo confiável ou uma agência de checagem confirmou?</p>
+</div>
+</div>
+<p style="position:absolute;left:96px;bottom:48px;width:1728px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649;border-top:1px solid #8f8676;padding:12px 0 0 0">Base: método SIFT, de Mike Caulfield; Wineburg et al., 2022; Guess et al., 2020</p>
+
+</section>
+</div><div class="notes">Bloco 4 (10 min no total). O checklist P.I.R.A. é uma adaptação do método SIFT, de Mike Caulfield, para lembrar de &quot;não pirar antes de compartilhar&quot;. Peça para a turma repetir as quatro palavras em voz alta. Se só existe naquele print, desconfie. Evidência: um conjunto de dicas de letramento midiático aumentou o discernimento entre manchetes verdadeiras e falsas em 26,5% nos EUA e 17,5% na Índia, mas o efeito diminui com o tempo — por isso vale treinar.</div></div><div class="frame"><div class="stage"><section id="lateral" data-transition="fade" style="background:#f6f1e7;color:#1b1a17;font-family:'Atkinson Hyperlegible', Verdana, sans-serif;font-size:34px;line-height:1.4;padding:96px 96px 144px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px;align-items:start">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649;border:1px solid #8f8676;border-radius:999px;padding:4px 20px">4 · Como identificar</p>
+<h2 style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:66px;font-weight:700;line-height:1.14;letter-spacing:-0.66px">Saia do site para descobrir quem ele é</h2>
+</div>
+<div style="display:flex;flex-direction:column;gap:32px">
+<div style="display:flex;flex-direction:row;align-items:center;gap:32px">
+<div style="width:800px;border:1px solid #8f8676;border-radius:8px;padding:40px;display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649">leitura vertical · como a maioria faz</p>
+<h3 style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:42px;font-weight:600;line-height:1.3">Fica no próprio site</h3>
+<p style="font-size:34px;line-height:1.4">Rola a página, lê o “Sobre nós” e se convence pelo visual profissional.</p>
+<p style="font-size:34px;line-height:1.4;color:#5c5649">Assim, até historiadores foram enganados.</p>
+</div>
+<x-shape kind="arrow-right" style="width:64px;height:32px;background:#5c5649"></x-shape>
+<div style="width:800px;background:#e9dfcb;border:1px solid #8f8676;border-radius:8px;padding:40px;display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649">leitura lateral · como checadores fazem</p>
+<h3 style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:42px;font-weight:600;line-height:1.3">Sai do site em segundos</h3>
+<p style="font-size:34px;line-height:1.4">Abre outra aba, pesquisa o nome de quem publicou e vê o que outras fontes dizem.</p>
+<p style="font-size:34px;line-height:1.4;color:#5c5649">Assim, decidem mais rápido e acertam mais.</p>
+</div>
+</div>
+<p style="font-size:34px;line-height:1.4"><b>Funciona na escola:</b> seis aulas com essa técnica melhoraram a avaliação de fontes de alunos do ensino médio.</p>
+</div>
+<p style="position:absolute;left:96px;bottom:48px;width:1728px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649;border-top:1px solid #8f8676;padding:12px 0 0 0">Fontes: Wineburg &amp; McGrew, 2019; Wineburg et al., 2022, J. Educational Psychology (271 alunos vs. 228)</p>
+
+</section>
+</div><div class="notes">Checadores profissionais avaliam um site desconhecido saindo dele rapidamente para ver o que outras fontes dizem. Historiadores e estudantes de Stanford, ao contrário, ficavam lendo o próprio site e eram enganados pelo visual profissional. Num distrito escolar dos EUA, seis aulas de 50 minutos com essa estratégia fizeram as turmas treinadas (271 alunos) melhorarem significativamente em relação às turmas de controle (228). Frase para fixar: o próprio site nunca vai dizer que é falso.</div></div><div class="frame"><div class="stage"><section id="dinamica-lateral" data-transition="fade" style="background:#f6f1e7;color:#1b1a17;font-family:'Atkinson Hyperlegible', Verdana, sans-serif;font-size:34px;line-height:1.4;padding:96px 96px 144px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px;align-items:start">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649;border:1px solid #8f8676;border-radius:999px;padding:4px 20px">4 · Como identificar · dinâmica</p>
+<h2 style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:66px;font-weight:700;line-height:1.14;letter-spacing:-0.66px">Dinâmica: esse site é confiável?</h2>
+</div>
+<div style="display:flex;flex-direction:row;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<img src="assets/ilsi-brasil-print.png" alt="Página inicial do site do ILSI Brasil, com logotipo, menu, banner de webinar científico e texto sobre integração entre academia, indústria e governo" style="width:800px;height:500px;object-fit:cover;border:1px solid #8f8676;border-radius:8px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649">ilsibrasil.org · print de 10/11/2026</p>
+</div>
+<div style="width:880px;display:flex;flex-direction:column;gap:24px">
+<div style="display:flex;flex-direction:column;gap:8px;border-top:1px solid #8f8676;padding:16px 0 0 0">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649">rodada 1 · 2 minutos</p>
+<p style="font-size:34px;line-height:1.4">Olhe só o site. Vote: é confiável?</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px;border-top:1px solid #8f8676;padding:16px 0 0 0">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649">rodada 2 · em dupla, com o celular</p>
+<p style="font-size:34px;line-height:1.4">Abra outra aba e pesquise “ILSI Brasil quem financia”. Vote de novo.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px;border-top:1px solid #8f8676;padding:16px 0 0 0">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649">conversa</p>
+<p style="font-size:34px;line-height:1.4">O que mudou? O “Sobre nós” do próprio site é a pior fonte para saber quem ele é.</p>
+</div>
+</div>
+</div>
+
+</section>
+</div><div class="notes">Dinâmica de 6 a 10 minutos, núcleo das aulas testadas por Wineburg et al. (2022). Caso: ILSI Brasil (ilsibrasil.org), &quot;instituto de ciências da vida&quot; com visual acadêmico. Se der, abra o site ao vivo; o print é o plano B se o Wi-Fi falhar.<br><br>Rodada 1 (2 min, só o site): a turma deve achar confiável — logotipo profissional, webinar &quot;científico&quot;, missão de &quot;integração entre academia, indústria e governo&quot;, seção de &quot;integridade científica&quot;. Vote com as mãos.<br><br>Rodada 2 (em duplas, celular): busca &quot;ILSI Brasil quem financia&quot;. Devem aparecer reportagens da Repórter Brasil (2024, sobre lobby do agro) e de O Joio e O Trigo (2019, sobre cientistas patrocinados por empresas de alimentação), segundo as quais o instituto foi criado por um executivo da Coca-Cola e é financiado por empresas como Unilever, Mondelez, Piracanjuba e Cargill. O próprio FAQ do ILSI diz que, no Brasil, o financiamento vem de empresas. Revote.<br><br>Discussão: o que mudou? A pergunta não é &quot;o site mente?&quot;, e sim &quot;quem está por trás e o que ganha com isso?&quot;. O &quot;Sobre nós&quot; do próprio site é a pior fonte para saber quem ele é. Ao falar de financiamento, cite a fonte (&quot;segundo a Repórter Brasil...&quot;) e mencione que a entidade se apresenta como científica e independente — isso é boa prática e evita acusação sem base.<br><br>Na véspera: teste a busca no seu celular (os resultados variam por aparelho) e confirme a lista de empresas associadas, que veio de um trecho sem data.</div></div><div class="frame"><div class="stage"><section id="sinais" data-transition="fade" style="background:#f6f1e7;color:#1b1a17;font-family:'Atkinson Hyperlegible', Verdana, sans-serif;font-size:34px;line-height:1.4;padding:96px 96px 144px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px;align-items:start">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649;border:1px solid #8f8676;border-radius:999px;padding:4px 20px">4 · Como identificar</p>
+<h2 style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:66px;font-weight:700;line-height:1.14;letter-spacing:-0.66px">Sinais de alerta</h2>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:24px 64px">
+<p style="font-size:34px;line-height:1.4;border-top:1px solid #8f8676;padding:16px 0 0 0">Título em CAIXA ALTA e cheio de “!!!”</p>
+<p style="font-size:34px;line-height:1.4;border-top:1px solid #8f8676;padding:16px 0 0 0">“Compartilhe antes que apaguem”</p>
+<p style="font-size:34px;line-height:1.4;border-top:1px solid #8f8676;padding:16px 0 0 0">Sem data, sem autor, sem link</p>
+<p style="font-size:34px;line-height:1.4;border-top:1px solid #8f8676;padding:16px 0 0 0">“A mídia não quer que você saiba”</p>
+<p style="font-size:34px;line-height:1.4;border-top:1px solid #8f8676;padding:16px 0 0 0">Foto que parece boa demais</p>
+<p style="font-size:34px;line-height:1.4;border-top:1px solid #8f8676;padding:16px 0 0 0">Áudio de “um médico” ou “um amigo da polícia” sem nome</p>
+<p style="font-size:34px;line-height:1.4;border-top:1px solid #8f8676;padding:16px 0 0 0">Erros de português num site que imita jornal</p>
+<p style="font-size:34px;line-height:1.4;color:#5c5649;border-top:1px solid #8f8676;padding:16px 0 0 0"><i>Um sinal sozinho não prova nada. É motivo para checar.</i></p>
+</div>
+
+</section>
+</div><div class="notes">Leia em voz alta e pergunte quais deles a turma já viu esta semana. Reforce o último item: sinais de alerta servem para acender a luz amarela e fazer você checar, não para decidir sozinho que algo é falso. Uma notícia verdadeira também pode ter título exagerado.</div></div><div class="frame"><div class="stage"><section id="ferramentas" data-transition="fade" style="background:#f6f1e7;color:#1b1a17;font-family:'Atkinson Hyperlegible', Verdana, sans-serif;font-size:34px;line-height:1.4;padding:96px 96px 144px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px;align-items:start">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649;border:1px solid #8f8676;border-radius:999px;padding:4px 20px">4 · Como identificar</p>
+<h2 style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:66px;font-weight:700;line-height:1.14;letter-spacing:-0.66px">Ferramentas grátis para checar</h2>
+</div>
+<table style="width:1728px;font-size:28px;line-height:1.35;color:#1b1a17">
+<tr style="background:#e9dfcb"><th style="width:26%;padding:12px 20px">Ferramenta</th><th style="width:36%;padding:12px 20px">Para quê</th><th style="width:38%;padding:12px 20px">Dica</th></tr>
+<tr><td style="padding:12px 20px"><b>Google Lens</b></td><td style="padding:12px 20px">Descobrir onde e quando uma foto já apareceu</td><td style="padding:12px 20px">Aponte a câmera para a imagem ou o print</td></tr>
+<tr><td style="padding:12px 20px"><b>TinEye</b> (tineye.com)</td><td style="padding:12px 20px">Busca reversa de imagem ordenada por data</td><td style="padding:12px 20px">Filtre por “Oldest” para achar a primeira aparição</td></tr>
+<tr><td style="padding:12px 20px"><b>Fact Check Explorer</b> (Google)</td><td style="padding:12px 20px">Ver se alguma agência já checou o assunto</td><td style="padding:12px 20px">Pesquise em português com palavras da mensagem</td></tr>
+<tr><td style="padding:12px 20px"><b>InVID-WeVerify</b></td><td style="padding:12px 20px">Quebrar vídeos em quadros e buscar cada um</td><td style="padding:12px 20px">Ótimo para vídeo “de agora” que é antigo</td></tr>
+<tr><td style="padding:12px 20px"><b>Agências de checagem</b></td><td style="padding:12px 20px">Desmentidos prontos e explicados</td><td style="padding:12px 20px">Lupa, Aos Fatos, Comprova, Fato ou Fake, Estadão Verifica</td></tr>
+</table>
+
+</section>
+</div><div class="notes">Mostre uma ferramenta ao vivo, se der tempo: o Google Lens no celular é a mais rápida. O Fact Check Explorer fica em toolbox.google.com/factcheck/explorer. O InVID-WeVerify é uma extensão para Chrome e Firefox. Algumas agências atendem por WhatsApp: confira o número oficial no site de cada uma antes de divulgar. Truque de busca simples para leitura lateral: nome do site ou perfil + &quot;golpe&quot;, &quot;falso&quot;, &quot;checagem&quot; ou &quot;Reclame Aqui&quot;.</div></div><div class="frame"><div class="stage"><section id="quiz-intro" data-transition="fade" style="background:#f6f1e7;color:#1b1a17;font-family:'Atkinson Hyperlegible', Verdana, sans-serif;font-size:34px;line-height:1.4;padding:96px;display:flex;flex-direction:column;justify-content:center;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px;align-items:start">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649;border:1px solid #8f8676;border-radius:999px;padding:4px 20px">5 · Quiz</p>
+<h1 style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:144px;font-weight:800;line-height:1;letter-spacing:-3px">Fato ou fake?</h1>
+</div>
+<p style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:42px;font-weight:600;line-height:1.3;color:#5c5649;width:1300px">Vote com a mão levantada. Depois a gente confere na agência de checagem — o primeiro passo da leitura lateral.</p>
+<div style="display:flex;flex-direction:row;gap:32px;align-items:center">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:40px;font-weight:600;letter-spacing:5px;line-height:1.2;text-transform:uppercase;color:#ffffff;background:#1f5aa6;border-radius:2px;padding:12px 28px">Fato</p>
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:40px;font-weight:600;letter-spacing:5px;line-height:1.2;text-transform:uppercase;color:#ffffff;background:#b93d0c;border-radius:2px;padding:12px 28px">Fake</p>
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:40px;font-weight:600;letter-spacing:5px;line-height:1.2;text-transform:uppercase;color:#1b1a17;background:#ffd23f;border-radius:2px;padding:12px 28px">Enganoso</p>
+</div>
+
+</section>
+</div><div class="notes">Quiz (8 min no total). Em cada slide, leia a afirmação e peça a votação com as mãos: fato ou fake? Depois clique para revelar o selo e a explicação. Antes da aula, abra a página de checagem de cada caso no site da agência e, se possível, mostre-a na tela: isso já ensina a leitura lateral. Inclui um caso verdadeiro de propósito, para não ensinar a &quot;desconfiar de tudo&quot;.</div></div><div class="frame"><div class="stage"><section id="quiz-pix" data-transition="fade" style="background:#f6f1e7;color:#1b1a17;font-family:'Atkinson Hyperlegible', Verdana, sans-serif;font-size:34px;line-height:1.4;padding:96px 96px 144px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;align-items:start">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649;border:1px solid #8f8676;border-radius:999px;padding:4px 20px">Quiz · 1 de 5</p>
+</div>
+<div style="background:#e9dfcb;border:1px solid #8f8676;border-radius:8px;padding:48px 480px 48px 48px;display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649">Circulou nas redes · jan/2025</p>
+<h2 style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:108px;font-weight:800;line-height:1.05;letter-spacing:-2px">“O governo vai taxar o Pix”</h2>
+</div>
+<p data-build-in="pop 1" style="position:absolute;left:1360px;top:250px;width:400px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:56px;font-weight:600;letter-spacing:8px;line-height:1.2;text-transform:uppercase;text-align:center;color:#ffffff;background:#b93d0c;border-radius:2px;padding:16px 24px;transform:rotate(-8deg)">Fake</p>
+<p data-build-in="rise 1" style="position:absolute;left:96px;top:620px;width:1728px;font-size:34px;line-height:1.4"><b>Por que é fake:</b> a regra da Receita só ampliava o monitoramento de dados das transações. Não criava imposto nenhum — e acabou revogada.</p>
+<p style="position:absolute;left:96px;bottom:48px;width:1728px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649;border-top:1px solid #8f8676;padding:12px 0 0 0">Checagem: várias agências de checagem, jan/2025 · [cole aqui o link da checagem]</p>
+
+</section>
+</div><div class="notes">Leia a afirmação e peça a votação. Clique para revelar o selo e a explicação. Foi uma onda de janeiro de 2025: a norma da Receita tratava de monitoramento de dados, não de cobrança de imposto, e acabou revogada. Várias agências checaram. Antes da aula, confira o link atualizado no site da agência e coloque no rodapé. Pergunta para a turma: que emoção essa mensagem queria provocar? (Medo e revolta.)</div></div><div class="frame"><div class="stage"><section id="quiz-vacina" data-transition="fade" style="background:#f6f1e7;color:#1b1a17;font-family:'Atkinson Hyperlegible', Verdana, sans-serif;font-size:34px;line-height:1.4;padding:96px 96px 144px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;align-items:start">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649;border:1px solid #8f8676;border-radius:999px;padding:4px 20px">Quiz · 2 de 5</p>
+</div>
+<div style="background:#e9dfcb;border:1px solid #8f8676;border-radius:8px;padding:48px 480px 48px 48px;display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649">Circulou nas redes · pandemia de covid-19</p>
+<h2 style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:108px;font-weight:800;line-height:1.05;letter-spacing:-2px">“Vacinas de covid-19 alteram o DNA”</h2>
+</div>
+<p data-build-in="pop 1" style="position:absolute;left:1360px;top:250px;width:400px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:56px;font-weight:600;letter-spacing:8px;line-height:1.2;text-transform:uppercase;text-align:center;color:#ffffff;background:#b93d0c;border-radius:2px;padding:16px 24px;transform:rotate(-8deg)">Fake</p>
+<p data-build-in="rise 1" style="position:absolute;left:96px;top:730px;width:1728px;font-size:34px;line-height:1.4"><b>Por que é fake:</b> a vacina não muda o DNA de ninguém. A afirmação foi checada e desmentida várias vezes por agências brasileiras.</p>
+<p style="position:absolute;left:96px;bottom:48px;width:1728px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649;border-top:1px solid #8f8676;padding:12px 0 0 0">Checagem: Agência Lupa, Aos Fatos, Projeto Comprova e outras · [cole aqui o link da checagem]</p>
+
+</section>
+</div><div class="notes">Caso checado repetidas vezes por Lupa, Aos Fatos, Comprova e outras agências. Bom exemplo do efeito da repetição: mesmo desmentido, continuou circulando por muito tempo. Se alguém da turma tiver dúvida real sobre vacinas, acolha e indique fontes oficiais de saúde e a página da agência, sem ridicularizar. Antes da aula, coloque o link da checagem no rodapé.</div></div><div class="frame"><div class="stage"><section id="quiz-voz" data-transition="fade" style="background:#f6f1e7;color:#1b1a17;font-family:'Atkinson Hyperlegible', Verdana, sans-serif;font-size:34px;line-height:1.4;padding:96px 96px 144px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;align-items:start">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649;border:1px solid #8f8676;border-radius:999px;padding:4px 20px">Quiz · 3 de 5</p>
+</div>
+<div style="background:#e9dfcb;border:1px solid #8f8676;border-radius:8px;padding:48px 480px 48px 48px;display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649">Você já deve ter ouvido</p>
+<h2 style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:108px;font-weight:800;line-height:1.05;letter-spacing:-2px">“Bastam 3 segundos de áudio para clonar uma voz”</h2>
+</div>
+<p data-build-in="pop 1" style="position:absolute;left:1360px;top:250px;width:400px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:56px;font-weight:600;letter-spacing:8px;line-height:1.2;text-transform:uppercase;text-align:center;color:#ffffff;background:#1f5aa6;border-radius:2px;padding:16px 24px;transform:rotate(-8deg)">Fato</p>
+<p data-build-in="rise 1" style="position:absolute;left:96px;top:730px;width:1728px;font-size:34px;line-height:1.4"><b>Por que é fato:</b> num teste de laboratório, 3 segundos de áudio geraram um clone com 85% de semelhança com a voz original.</p>
+<p style="position:absolute;left:96px;bottom:48px;width:1728px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649;border-top:1px solid #8f8676;padding:12px 0 0 0">Fonte: McAfee Labs, 2023 (relatório de empresa, não revisado por pares)</p>
+
+</section>
+</div><div class="notes">Este é o caso verdadeiro que parece falso. Ele está aqui para ninguém sair achando que &quot;tudo é mentira&quot;. O dado vem de um teste do McAfee Labs de 2023: é relatório de empresa, não estudo revisado por pares, então diga isso com honestidade. Mas o risco é real: golpistas usam áudios publicados nas redes para clonar a voz de alguém e pedir Pix para a família. Vamos voltar a isso no bloco de IA.</div></div><div class="frame"><div class="stage"><section id="quiz-urna" data-transition="fade" style="background:#f6f1e7;color:#1b1a17;font-family:'Atkinson Hyperlegible', Verdana, sans-serif;font-size:34px;line-height:1.4;padding:96px 96px 144px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;align-items:start">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649;border:1px solid #8f8676;border-radius:999px;padding:4px 20px">Quiz · 4 de 5</p>
+</div>
+<div style="background:#e9dfcb;border:1px solid #8f8676;border-radius:8px;padding:48px 480px 48px 48px;display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649">Circulou nas redes · eleições de 2022</p>
+<h2 style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:108px;font-weight:800;line-height:1.05;letter-spacing:-2px">“As urnas eletrônicas foram fraudadas em 2022”</h2>
+</div>
+<p data-build-in="pop 1" style="position:absolute;left:1360px;top:250px;width:400px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:56px;font-weight:600;letter-spacing:8px;line-height:1.2;text-transform:uppercase;text-align:center;color:#ffffff;background:#b93d0c;border-radius:2px;padding:16px 24px;transform:rotate(-8deg)">Fake</p>
+<p data-build-in="rise 1" style="position:absolute;left:96px;top:730px;width:1728px;font-size:34px;line-height:1.4"><b>Por que é fake:</b> não há evidência de fraude. A alegação foi checada por agências de checagem e pelo Tribunal Superior Eleitoral.</p>
+<p style="position:absolute;left:96px;bottom:48px;width:1728px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649;border-top:1px solid #8f8676;padding:12px 0 0 0">Checagem: agências de checagem e TSE · [cole aqui o link da checagem]</p>
+
+</section>
+</div><div class="notes">Tema que pode gerar debate político; conduza com neutralidade. O ponto não é partidário, e sim o método: quem afirma fraude precisa mostrar evidência, e as checagens não encontraram nenhuma. O veredito no material de apoio é &quot;falso / sem evidências&quot;. Se a turma esquentar, volte ao P.I.R.A.: qual é a fonte? Onde está a origem? Quem mais confirmou? Antes da aula, coloque o link da checagem no rodapé.</div></div><div class="frame"><div class="stage"><section id="quiz-medico" data-transition="fade" style="background:#f6f1e7;color:#1b1a17;font-family:'Atkinson Hyperlegible', Verdana, sans-serif;font-size:34px;line-height:1.4;padding:96px 96px 144px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;align-items:start">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649;border:1px solid #8f8676;border-radius:999px;padding:4px 20px">Quiz · 5 de 5</p>
+</div>
+<div style="background:#e9dfcb;border:1px solid #8f8676;border-radius:8px;padding:48px 480px 48px 48px;display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649">Anúncio em rede social</p>
+<h2 style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:108px;font-weight:800;line-height:1.05;letter-spacing:-2px">Vídeo: médico famoso indica remédio “milagroso”</h2>
+</div>
+<p data-build-in="pop 1" style="position:absolute;left:1360px;top:250px;width:400px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:56px;font-weight:600;letter-spacing:8px;line-height:1.2;text-transform:uppercase;text-align:center;color:#ffffff;background:#b93d0c;border-radius:2px;padding:16px 24px;transform:rotate(-8deg)">Fake</p>
+<p data-build-in="rise 1" style="position:absolute;left:96px;top:730px;width:1728px;font-size:34px;line-height:1.4"><b>Por que é fake:</b> é deepfake — o rosto e a voz do médico foram montados com IA para vender o produto. Há vários casos assim checados por agências.</p>
+<p style="position:absolute;left:96px;bottom:48px;width:1728px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649;border-top:1px solid #8f8676;padding:12px 0 0 0">Checagem: casos de deepfake checados por agências · [cole aqui o link de um caso]</p>
+
+</section>
+</div><div class="notes">Antes da aula, escolha um caso real de deepfake de médico ou apresentador vendendo remédio que tenha sido checado por uma agência, e coloque o link no rodapé (se quiser, mostre a página da checagem). Pergunta para a turma: como conferir? Resposta: procure no perfil verificado da pessoa e nas agências. Famoso recomendando produto milagroso, aposta ou dinheiro fácil em anúncio: presuma golpe.</div></div><div class="frame"><div class="stage"><section id="desconfiar-tudo" data-transition="fade" style="background:#f6f1e7;color:#1b1a17;font-family:'Atkinson Hyperlegible', Verdana, sans-serif;font-size:34px;line-height:1.4;padding:96px 96px 144px;display:flex;flex-direction:column;justify-content:center;gap:48px">
+<h1 style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:108px;font-weight:800;line-height:1.05;letter-spacing:-2px">Desconfiar de tudo também atrapalha</h1>
+<div style="display:flex;flex-direction:column;gap:16px;align-items:start">
+<p style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:42px;font-weight:600;line-height:1.3;color:#5c5649;width:1400px">Quem dizia não confiar em fonte nenhuma se saiu pior para separar verdade de mentira. O objetivo não é desconfiar mais. É</p>
+<p style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:42px;font-weight:600;line-height:1.3;background:#ffd23f;padding:4px 16px">confiar melhor.</p>
+</div>
+<p style="position:absolute;left:96px;bottom:48px;width:1728px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649;border-top:1px solid #8f8676;padding:12px 0 0 0">Fonte: Painel TIC Integridade da Informação, Cetic.br e Agência Lupa, 2026</p>
+
+</section>
+</div><div class="notes">Fechamento do quiz. No Painel TIC, quem desconfiava de todas as fontes teve desempenho pior em classificar informações. Cinismo não protege: só troca um erro por outro. Lembre o caso da voz clonada, que era verdadeiro. A meta é saber em quem confiar e como conferir.</div></div><div class="frame"><div class="stage"><section id="olho" data-transition="fade" style="background:#f6f1e7;color:#1b1a17;font-family:'Atkinson Hyperlegible', Verdana, sans-serif;font-size:34px;line-height:1.4;padding:96px 96px 144px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px;align-items:start">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649;border:1px solid #8f8676;border-radius:999px;padding:4px 20px">6 · IA e deepfakes</p>
+<h2 style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:66px;font-weight:700;line-height:1.14;letter-spacing:-0.66px">Seu olho não é detector de deepfake</h2>
+</div>
+<div style="display:flex;flex-direction:row;gap:48px">
+<div style="width:900px;display:flex;flex-direction:column;gap:32px">
+<div style="display:flex;flex-direction:column;gap:8px">
+<p style="font-size:34px;line-height:1.4;color:#5c5649">Jogar uma moeda: <b>50%</b></p>
+<div style="width:430px;height:40px;background:#8f8676;border-radius:2px"></div>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px">
+<p style="font-size:34px;line-height:1.4">Pessoas sem treino: <b>55%</b></p>
+<div style="width:473px;height:40px;background:#1b1a17;border-radius:2px"></div>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px">
+<p style="font-size:34px;line-height:1.4;color:#5c5649">Com treino, feedback e apoio de IA: <b>65%</b></p>
+<div style="width:559px;height:40px;background:#5c5649;border-radius:2px"></div>
+</div>
+</div>
+<div style="width:780px;display:flex;flex-direction:column;gap:24px;border-left:1px solid #8f8676;padding:0 0 0 48px;align-items:start">
+<h3 style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:42px;font-weight:600;line-height:1.3">A lição</h3>
+<p style="font-size:34px;line-height:1.4">Treino ajuda, mas não resolve. Não confie no “dá pra ver que é falso”.</p>
+<p style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:42px;font-weight:600;line-height:1.3;background:#ffd23f;padding:4px 16px">Cheque a origem.</p>
+</div>
+</div>
+<p style="position:absolute;left:96px;bottom:48px;width:1728px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649;border-top:1px solid #8f8676;padding:12px 0 0 0">Fontes: Diel et al., 2024 (meta-análise, 86.155 participantes); Stockner et al., 2026</p>
+
+</section>
+</div><div class="notes">Bloco 6 (5 min no total). Retome o teste do começo. Na meta-análise de Diel et al. (2024), a acurácia geral ficou perto do acaso; treino com feedback, apoio de IA e exemplos exagerados elevaram para 65,14%. Uma meta-análise de 2026 sobre rostos deepfake (Stockner et al.) reforça o quadro: desempenho baixo, que melhora com intervenções. Mensagem: procurar &quot;dedos estranhos&quot; não basta; o que funciona é checar de onde veio.</div></div><div class="frame"><div class="stage"><section id="voz-famoso" data-transition="fade" style="background:#f6f1e7;color:#1b1a17;font-family:'Atkinson Hyperlegible', Verdana, sans-serif;font-size:34px;line-height:1.4;padding:96px 96px 144px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px;align-items:start">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649;border:1px solid #8f8676;border-radius:999px;padding:4px 20px">6 · IA e deepfakes</p>
+<h2 style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:66px;font-weight:700;line-height:1.14;letter-spacing:-0.66px">Voz clonada e famoso falso</h2>
+</div>
+<div style="display:flex;flex-direction:row;gap:48px">
+<div style="width:840px;background:#e9dfcb;border-radius:8px;padding:48px;display:flex;flex-direction:column;gap:16px">
+<h3 style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:42px;font-weight:600;line-height:1.3">Voz clonada</h3>
+<p style="font-size:34px;line-height:1.4">Um áudio “da sua mãe” ou “do seu amigo” pedindo Pix pode ter sido feito com IA a partir de poucos segundos da voz real.</p>
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649;border-top:1px solid #8f8676;padding:16px 0 0 0">como se proteger</p>
+<p style="font-size:34px;line-height:1.4">Combine uma palavra-senha com a família e ligue de volta para o número que você já conhece.</p>
+</div>
+<div style="width:840px;background:#e9dfcb;border-radius:8px;padding:48px;display:flex;flex-direction:column;gap:16px">
+<h3 style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:42px;font-weight:600;line-height:1.3">Famoso em anúncio</h3>
+<p style="font-size:34px;line-height:1.4">Vídeo falso de apresentador, médico ou celebridade vendendo remédio, curso, aposta ou “investimento”.</p>
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649;border-top:1px solid #8f8676;padding:16px 0 0 0">como se proteger</p>
+<p style="font-size:34px;line-height:1.4">Famoso recomendando aposta, cripto ou dinheiro fácil? Presuma golpe e confira no perfil verificado.</p>
+</div>
+</div>
+<p style="position:absolute;left:96px;bottom:48px;width:1728px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649;border-top:1px solid #8f8676;padding:12px 0 0 0">Fonte: McAfee Labs, 2023 (relatório de empresa, não revisado por pares)</p>
+
+</section>
+</div><div class="notes">Lembre o quiz: 3 segundos de áudio bastaram, num teste de laboratório, para gerar um clone parecido com a voz original. Golpistas pegam trechos de vídeos e áudios publicados e mandam um áudio &quot;da mãe&quot; ou &quot;do amigo&quot; pedindo Pix. Sugira à turma combinar hoje mesmo uma palavra-senha com a família. Nos anúncios, a regra é simples: famoso recomendando aposta, cripto ou dinheiro fácil = presuma golpe.</div></div><div class="frame"><div class="stage"><section id="deepnudes" data-transition="fade" style="background:#f6f1e7;color:#1b1a17;font-family:'Atkinson Hyperlegible', Verdana, sans-serif;font-size:34px;line-height:1.4;padding:96px 96px 144px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px;align-items:start">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649;border:1px solid #8f8676;border-radius:999px;padding:4px 20px">6 · IA e deepfakes</p>
+<h2 style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:66px;font-weight:700;line-height:1.14;letter-spacing:-0.66px">Nude falso feito por IA não é brincadeira. É violência.</h2>
+</div>
+<div style="display:flex;flex-direction:row;gap:48px">
+<div style="width:560px;display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:144px;font-weight:800;line-height:1;letter-spacing:-2px">222</p>
+<p style="font-size:34px;line-height:1.4">vítimas em 17 casos em escolas brasileiras, de ago/2025 a fev/2026.</p>
+<p style="font-size:34px;line-height:1.4;color:#5c5649">Todas meninas ou mulheres, a maioria estudantes de 12 a 17 anos.</p>
+</div>
+<div style="width:1120px;display:flex;flex-direction:column;gap:16px;border-left:1px solid #8f8676;padding:0 0 0 48px">
+<p style="font-size:34px;line-height:1.4;border-top:1px solid #8f8676;padding:16px 0 0 0"><b>Criar, pedir ou repassar</b> esse tipo de imagem é violência.</p>
+<p style="font-size:34px;line-height:1.4;border-top:1px solid #8f8676;padding:16px 0 0 0">Se a vítima é menor de idade, montar cena sexual com a foto dela é <b>crime</b> (ECA, art. 241-C). Adolescente responde por ato infracional.</p>
+<p style="font-size:34px;line-height:1.4;border-top:1px solid #8f8676;padding:16px 0 0 0">Usar IA para alterar imagem ou voz de uma mulher <b>aumenta a pena</b> da violência psicológica (Lei 15.123/2025).</p>
+<p style="font-size:34px;line-height:1.4;border-top:1px solid #8f8676;padding:16px 0 0 0">Recebeu? <b>Não repasse.</b> Denuncie e apoie a vítima.</p>
+</div>
+</div>
+<p style="position:absolute;left:96px;bottom:48px;width:1728px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649;border-top:1px solid #8f8676;padding:12px 0 0 0">Fontes: SaferNet Brasil (mapeamento 2025–2026); ECA, art. 241-C; Lei 15.123/2025</p>
+
+</section>
+</div><div class="notes">Fale sem rodeios e sem piada. A SaferNet mapeou 16 casos de deepfakes sexuais em escolas de 10 dos 27 estados (out/2025); num recorte posterior, de ago/2025 a fev/2026, foram 17 casos e 222 vítimas, todas meninas ou mulheres, principalmente estudantes de 12 a 17 anos e professoras. O ECA Digital, em vigor desde março de 2026, amplia os deveres das plataformas na proteção de crianças e adolescentes. Se alguém da turma estiver passando por isso, diga que pode procurar você ou a coordenação depois da aula, em particular. Confira a legislação antes da palestra.</div></div><div class="frame"><div class="stage"><section id="ia-fonte" data-transition="fade" style="background:#f6f1e7;color:#1b1a17;font-family:'Atkinson Hyperlegible', Verdana, sans-serif;font-size:34px;line-height:1.4;padding:96px 96px 144px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px;align-items:start">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649;border:1px solid #8f8676;border-radius:999px;padding:4px 20px">6 · IA e deepfakes</p>
+<h2 style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:66px;font-weight:700;line-height:1.14;letter-spacing:-0.66px">IA ajuda a checar, mas não é juíza</h2>
+</div>
+<div style="display:flex;flex-direction:row;gap:48px">
+<div style="width:1040px;display:flex;flex-direction:column;gap:24px">
+<p style="font-size:34px;line-height:1.4">Chatbots “alucinam”: inventam fatos, links e referências com toda a confiança.</p>
+<div style="display:flex;flex-direction:row;gap:32px;align-items:center;border-top:1px solid #8f8676;padding:24px 0 0 0">
+<p style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:66px;font-weight:700;line-height:1.14;width:200px">47%</p>
+<p style="font-size:34px;line-height:1.4;width:800px">dos internautas brasileiros já usaram o ChatGPT.</p>
+</div>
+<div style="display:flex;flex-direction:row;gap:32px;align-items:center;border-top:1px solid #8f8676;padding:24px 0 0 0">
+<p style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:66px;font-weight:700;line-height:1.14;width:200px">38%</p>
+<p style="font-size:34px;line-height:1.4;width:800px">de quem só usa internet pelo celular citou a IA do WhatsApp, a mais usada nesse grupo.</p>
+</div>
+</div>
+<div style="width:640px;background:#e9dfcb;border-radius:8px;padding:48px;display:flex;flex-direction:column;gap:16px;align-self:start">
+<h3 style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:42px;font-weight:600;line-height:1.3">Use para</h3>
+<p style="font-size:34px;line-height:1.4">organizar a checagem e achar pistas.</p>
+<h3 style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:42px;font-weight:600;line-height:1.3;border-top:1px solid #8f8676;padding:16px 0 0 0">Não use como</h3>
+<p style="font-size:34px;line-height:1.4">prova final. Abra os links e confirme numa agência.</p>
+</div>
+</div>
+<p style="position:absolute;left:96px;bottom:48px;width:1728px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649;border-top:1px solid #8f8676;padding:12px 0 0 0">Fonte: Painel TIC Integridade da Informação, Cetic.br e Agência Lupa, 2026</p>
+
+</section>
+</div><div class="notes">Muitos alunos usam IA para pesquisa escolar: 68% dos jovens de 15 a 17 anos, segundo a TIC Kids Online 2025. Explique &quot;alucinação&quot;: a IA não sabe que está inventando, ela produz texto plausível. Pode citar um estudo que não existe, com link quebrado. Por isso, no fim da palestra vamos levar um prompt que pede para a IA mostrar as fontes e avisar quando não sabe — mas a última palavra é sempre de uma fonte que você abriu e conferiu.</div></div><div class="frame"><div class="stage"><section id="gatilhos" data-transition="fade" style="background:#f6f1e7;color:#1b1a17;font-family:'Atkinson Hyperlegible', Verdana, sans-serif;font-size:34px;line-height:1.4;padding:96px 96px 144px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px;align-items:start">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649;border:1px solid #8f8676;border-radius:999px;padding:4px 20px">7 · Golpes virtuais</p>
+<h2 style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:66px;font-weight:700;line-height:1.14;letter-spacing:-0.66px">Seis gatilhos que golpistas usam</h2>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px">
+<div style="background:#e9dfcb;border-radius:8px;padding:32px;display:flex;flex-direction:column;gap:12px">
+<h3 style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:42px;font-weight:600;line-height:1.3">Autoridade</h3>
+<p style="font-size:34px;line-height:1.4;color:#5c5649">“Aqui é do suporte do banco.”</p>
+</div>
+<div style="background:#e9dfcb;border-radius:8px;padding:32px;display:flex;flex-direction:column;gap:12px;align-items:start">
+<h3 style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:42px;font-weight:600;line-height:1.3">Urgência e escassez</h3>
+<p style="font-size:34px;line-height:1.4;color:#5c5649">“Só hoje! Últimas vagas!”</p>
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;background:#ffd23f;border-radius:999px;padding:4px 16px">jovens caem mais</p>
+</div>
+<div style="background:#e9dfcb;border-radius:8px;padding:32px;display:flex;flex-direction:column;gap:12px">
+<h3 style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:42px;font-weight:600;line-height:1.3">Prova social</h3>
+<p style="font-size:34px;line-height:1.4;color:#5c5649">“Todo mundo do grupo já ganhou.”</p>
+</div>
+<div style="background:#e9dfcb;border-radius:8px;padding:32px;display:flex;flex-direction:column;gap:12px">
+<h3 style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:42px;font-weight:600;line-height:1.3">Afeição</h3>
+<p style="font-size:34px;line-height:1.4;color:#5c5649">“Oi, sou eu, troquei de número.”</p>
+</div>
+<div style="background:#e9dfcb;border-radius:8px;padding:32px;display:flex;flex-direction:column;gap:12px">
+<h3 style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:42px;font-weight:600;line-height:1.3">Reciprocidade</h3>
+<p style="font-size:34px;line-height:1.4;color:#5c5649">“Te dei um bônus, agora me ajuda.”</p>
+</div>
+<div style="background:#e9dfcb;border-radius:8px;padding:32px;display:flex;flex-direction:column;gap:12px">
+<h3 style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:42px;font-weight:600;line-height:1.3">Compromisso</h3>
+<p style="font-size:34px;line-height:1.4;color:#5c5649">“Você já pagou uma taxa, falta só essa.”</p>
+</div>
+</div>
+<p style="position:absolute;left:96px;bottom:48px;width:1728px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649;border-top:1px solid #8f8676;padding:12px 0 0 0">Fontes: Oliveira et al., 2017, e Sheng et al., 2010, CHI — princípios de persuasão de Cialdini</p>
+
+</section>
+</div><div class="notes">Bloco 7. E-mails de phishing exploram sistematicamente seis princípios de persuasão de Cialdini. Num estudo de campo de 21 dias, jovens adultos foram mais suscetíveis à escassez (&quot;só hoje!&quot;) e idosos à reciprocidade. Noutro, com 1.001 adultos, quem tinha de 18 a 25 anos foi mais suscetível a phishing que as outras idades. Ressalva honesta: a evidência sobre idade é mista, e esses estudos são com adultos jovens, não com menores. As frases nos cartões são exemplos ilustrativos.</div></div><div class="frame"><div class="stage"><section id="regras-fixas" data-transition="fade" style="background:#f6f1e7;color:#1b1a17;font-family:'Atkinson Hyperlegible', Verdana, sans-serif;font-size:34px;line-height:1.4;padding:96px 96px 144px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px;align-items:start">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649;border:1px solid #8f8676;border-radius:999px;padding:4px 20px">7 · Golpes virtuais</p>
+<h2 style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:66px;font-weight:700;line-height:1.14;letter-spacing:-0.66px">Saber do golpe ajuda. Regra fixa ajuda mais.</h2>
+</div>
+<div style="display:flex;flex-direction:row;gap:48px">
+<div style="width:640px;display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:144px;font-weight:800;line-height:1;letter-spacing:-2px">2%</p>
+<p style="font-size:34px;line-height:1.4">foi quanto o treinamento contra phishing reduziu os cliques, num teste com mais de 19.500 funcionários.</p>
+<p style="font-size:34px;line-height:1.4;color:#5c5649"><b>Phishing:</b> mensagem falsa que tenta roubar seus dados.</p>
+</div>
+<div style="width:1040px;display:flex;flex-direction:column;gap:32px;border-left:1px solid #8f8676;padding:0 0 0 48px">
+<div style="display:flex;flex-direction:column;gap:12px">
+<h3 style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:42px;font-weight:600;line-height:1.3">Barreiras técnicas</h3>
+<p style="font-size:34px;line-height:1.4">Verificação em duas etapas em todas as contas.</p>
+<p style="font-size:34px;line-height:1.4">Limite baixo de Pix à noite.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px;border-top:1px solid #8f8676;padding:32px 0 0 0">
+<h3 style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:42px;font-weight:600;line-height:1.3">Regras que não se negociam</h3>
+<p style="font-size:34px;line-height:1.4">“Nunca passo código.”</p>
+<p style="font-size:34px;line-height:1.4">“Sempre confirmo por ligação.”</p>
+</div>
+</div>
+</div>
+<p style="position:absolute;left:96px;bottom:48px;width:1728px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649;border-top:1px solid #8f8676;padding:12px 0 0 0">Fonte: Ho et al., 2025, IEEE Symposium on Security and Privacy</p>
+
+</section>
+</div><div class="notes">Experimento randomizado de 8 meses, com 10 campanhas de phishing simulado enviadas a mais de 19.500 funcionários da UC San Diego Health. O treinamento mostrado depois de cair num teste reduziu a chance de clicar em apenas 2%, em parte porque a maioria fechava a página de treino em menos de um minuto. Conclusão: conhecer o golpe ajuda, mas o que mais protege são barreiras técnicas e regras fixas, decididas antes, com calma — não na hora da pressa.</div></div><div class="frame"><div class="stage"><section id="golpes-contas" data-transition="fade" style="background:#f6f1e7;color:#1b1a17;font-family:'Atkinson Hyperlegible', Verdana, sans-serif;font-size:34px;line-height:1.4;padding:96px 96px 144px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px;align-items:start">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649;border:1px solid #8f8676;border-radius:999px;padding:4px 20px">7 · Golpes virtuais</p>
+<h2 style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:66px;font-weight:700;line-height:1.14;letter-spacing:-0.66px">Golpes nas suas contas e jogos</h2>
+</div>
+<table style="width:1728px;font-size:28px;line-height:1.35;color:#1b1a17">
+<tr style="background:#e9dfcb"><th style="width:28%;padding:14px 20px">Golpe</th><th style="width:36%;padding:14px 20px">Sinal de alerta</th><th style="width:36%;padding:14px 20px">Proteção</th></tr>
+<tr><td style="padding:14px 20px"><b>Invasão de conta</b> (Instagram, TikTok, WhatsApp, Discord)</td><td style="padding:14px 20px">Pedem “o código que chegou por engano” ou mandam link de “verificação”</td><td style="padding:14px 20px">Nunca repasse códigos. Ative a verificação em duas etapas.</td></tr>
+<tr><td style="padding:14px 20px"><b>Skins, diamantes e Robux grátis</b></td><td style="padding:14px 20px">“Gerador”, “só logar aqui”, link encurtado</td><td style="padding:14px 20px">Login só no app ou site oficial. Nada de geradores.</td></tr>
+<tr><td style="padding:14px 20px"><b>Falso sorteio</b></td><td style="padding:14px 20px">Você “ganhou” sem participar; perfil novo imitando o original</td><td style="padding:14px 20px">Prêmio de verdade não cobra frete nem taxa.</td></tr>
+<tr><td style="padding:14px 20px"><b>Phishing por SMS e WhatsApp</b></td><td style="padding:14px 20px">“Pacote retido”, “CPF bloqueado”, “pontos vão expirar” + link</td><td style="padding:14px 20px">Não clique. Abra o app oficial direto.</td></tr>
+</table>
+
+</section>
+</div><div class="notes">Pergunte quem já recebeu algum desses. A regra que resolve a maioria: código de 6 dígitos não se passa para ninguém — nem amigo, nem &quot;suporte&quot;, nem &quot;a empresa&quot;. No WhatsApp, a verificação em duas etapas é um PIN de 6 dígitos. Nos jogos, desconfie de trocas de skins fora do sistema oficial: o outro lado nunca entrega.</div></div><div class="frame"><div class="stage"><section id="golpes-dinheiro" data-transition="fade" style="background:#f6f1e7;color:#1b1a17;font-family:'Atkinson Hyperlegible', Verdana, sans-serif;font-size:34px;line-height:1.4;padding:96px 96px 144px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px;align-items:start">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649;border:1px solid #8f8676;border-radius:999px;padding:4px 20px">7 · Golpes virtuais</p>
+<h2 style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:66px;font-weight:700;line-height:1.14;letter-spacing:-0.66px">Golpes do dinheiro fácil</h2>
+</div>
+<table style="width:1728px;font-size:28px;line-height:1.35;color:#1b1a17">
+<tr style="background:#e9dfcb"><th style="width:28%;padding:14px 20px">Golpe</th><th style="width:36%;padding:14px 20px">Sinal de alerta</th><th style="width:36%;padding:14px 20px">Proteção</th></tr>
+<tr><td style="padding:14px 20px"><b>Falsa vaga</b> de emprego, estágio ou jovem aprendiz</td><td style="padding:14px 20px">Salário alto para pouco trabalho; cobram “kit”, “curso” ou “cadastro”</td><td style="padding:14px 20px">Empresa séria não cobra para contratar. Confira no site oficial.</td></tr>
+<tr><td style="padding:14px 20px"><b>Tarefa paga</b> (“curtir vídeos”)</td><td style="padding:14px 20px">Paga centavos no início e depois pede depósito para “liberar nível VIP”</td><td style="padding:14px 20px">Se precisa pagar para ganhar, é golpe.</td></tr>
+<tr><td style="padding:14px 20px"><b>Apostas, “bets” e “tigrinho”</b></td><td style="padding:14px 20px">Influenciador mostrando ganhos; “plataforma pagando agora”</td><td style="padding:14px 20px">Proibido para menores de 18. Aposta não é investimento.</td></tr>
+<tr><td style="padding:14px 20px"><b>Loja falsa</b></td><td style="padding:14px 20px">Preço muito abaixo do mercado; só aceita Pix</td><td style="padding:14px 20px">Pesquise o site + “golpe” e confira o CNPJ.</td></tr>
+</table>
+<p style="position:absolute;left:96px;bottom:48px;width:1728px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649;border-top:1px solid #8f8676;padding:12px 0 0 0">63% dos jovens de 15 a 17 anos viram vídeos divulgando apostas · Fonte: TIC Kids Online Brasil 2025</p>
+
+</section>
+</div><div class="notes">Sobre apostas: influenciadores muitas vezes mostram ganhos com conta de demonstração, e a plataforma é desenhada para a casa ganhar. Segundo pesquisa Ipsos para a Unico (empresa com interesse no tema, use como indicativo), 11% dos jovens de 10 a 17 anos apostaram online em 2025, e 20% entre meninos de 16 e 17 anos. A tarefa paga é uma pirâmide: o dinheiro do começo serve só para ganhar sua confiança.</div></div><div class="frame"><div class="stage"><section id="falso-parente" data-transition="fade" style="background:#f6f1e7;color:#1b1a17;font-family:'Atkinson Hyperlegible', Verdana, sans-serif;font-size:34px;line-height:1.4;padding:96px 96px 144px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px;align-items:start">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649;border:1px solid #8f8676;border-radius:999px;padding:4px 20px">7 · Golpes virtuais</p>
+<h2 style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:66px;font-weight:700;line-height:1.14;letter-spacing:-0.66px">Pediu Pix? Ligue de volta.</h2>
+</div>
+<div style="display:flex;flex-direction:row;gap:64px">
+<div style="width:720px;display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649">mensagem de um número novo · exemplo fictício</p>
+<div style="background:#e9dfcb;border:1px solid #8f8676;border-radius:8px 8px 8px 2px;padding:32px">
+<p style="font-size:34px;line-height:1.4">Oi, é o Lucas. Troquei de número. Tô sem saldo no app, me empresta R$ 200 até amanhã? Manda pra conta da minha prima.</p>
+</div>
+</div>
+<div style="width:944px;display:flex;flex-direction:column;gap:24px">
+<div style="display:flex;flex-direction:row;gap:24px;align-items:start;border-top:1px solid #8f8676;padding:16px 0 0 0">
+<p style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:66px;font-weight:700;line-height:1;width:64px">1</p>
+<p style="font-size:34px;line-height:1.4;width:840px">Número novo, pressa e conta de outra pessoa: sinal amarelo.</p>
+</div>
+<div style="display:flex;flex-direction:row;gap:24px;align-items:start;border-top:1px solid #8f8676;padding:16px 0 0 0">
+<p style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:66px;font-weight:700;line-height:1;width:64px">2</p>
+<p style="font-size:34px;line-height:1.4;width:840px">Ligue para o número antigo ou fale pessoalmente.</p>
+</div>
+<div style="display:flex;flex-direction:row;gap:24px;align-items:start;border-top:1px solid #8f8676;padding:16px 0 0 0">
+<p style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:66px;font-weight:700;line-height:1;width:64px">3</p>
+<p style="font-size:34px;line-height:1.4;width:840px">Combine uma palavra-senha com a família.</p>
+</div>
+</div>
+</div>
+<p style="position:absolute;left:96px;bottom:48px;width:1728px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649;border-top:1px solid #8f8676;padding:12px 0 0 0">Fonte: Observatório Febraban, jun/2025 — o golpe do WhatsApp é o segundo mais citado</p>
+
+</section>
+</div><div class="notes">Golpe do falso parente ou amigo, com conta clonada ou número novo. Na pesquisa da Febraban (jun/2025), os golpes mais citados foram: clonagem ou troca de cartão (45%), golpe do WhatsApp (34%), falsa central (31%), Pix falso (24%) e leilão ou loja falsa (10%). Cetic.br, 2025: um em cada cinco internautas sofreu golpe com seus dados, e 84% dos afetados foram abordados por aplicativos de mensagem. A defesa é sair do canal do golpista: ligue para o número que você já tinha.</div></div><div class="frame"><div class="stage"><section id="sextorsao" data-transition="fade" style="background:#f6f1e7;color:#1b1a17;font-family:'Atkinson Hyperlegible', Verdana, sans-serif;font-size:34px;line-height:1.4;padding:96px 96px 144px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px;align-items:start">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649;border:1px solid #8f8676;border-radius:999px;padding:4px 20px">7 · Golpes virtuais</p>
+<h2 style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:66px;font-weight:700;line-height:1.14;letter-spacing:-0.66px">Se alguém te ameaçar com uma foto íntima</h2>
+</div>
+<div style="display:flex;flex-direction:column;gap:32px">
+<p style="font-size:34px;line-height:1.4;color:#5c5649;width:1600px"><b>Sextorsão:</b> um perfil “da sua idade” puxa conversa, pede foto íntima e depois ameaça divulgar se você não pagar ou não mandar mais.</p>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:24px">
+<div style="background:#e9dfcb;border-radius:8px;padding:32px"><h3 style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:42px;font-weight:600;line-height:1.3">Não pague.</h3></div>
+<div style="background:#e9dfcb;border-radius:8px;padding:32px"><h3 style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:42px;font-weight:600;line-height:1.3">Não mande mais nada.</h3></div>
+<div style="background:#e9dfcb;border-radius:8px;padding:32px"><h3 style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:42px;font-weight:600;line-height:1.3">Não apague as provas.</h3></div>
+<div style="background:#e9dfcb;border-radius:8px;padding:32px"><h3 style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:42px;font-weight:600;line-height:1.3">Conte para um adulto.</h3></div>
+</div>
+<div style="border-left:8px solid #1b1a17;padding:8px 0 8px 32px;display:flex;flex-direction:column;gap:8px">
+<p style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:42px;font-weight:600;line-height:1.3">A culpa nunca é da vítima.</p>
+<p style="font-size:34px;line-height:1.4">Canal de Ajuda da SaferNet: <b>canaldeajuda.org.br</b> — grátis e sigiloso.</p>
+</div>
+</div>
+
+</section>
+</div><div class="notes">Fale com calma e sem julgamento. Elogios rápidos, pedido de segredo e convite para mudar de aplicativo são sinais clássicos de aliciamento. Se acontecer: não pagar (pagar não faz parar), não mandar mais nada, não apagar as conversas (são provas), contar para um adulto de confiança e procurar o Canal de Ajuda da SaferNet, que atende por chat e e-mail. Se a vítima for menor de idade, procure também o Conselho Tutelar. Diga que quem quiser conversar pode falar com você em particular depois.</div></div><div class="frame"><div class="stage"><section id="dinamica-golpe" data-transition="fade" style="background:#f6f1e7;color:#1b1a17;font-family:'Atkinson Hyperlegible', Verdana, sans-serif;font-size:34px;line-height:1.4;padding:96px 96px 144px;display:flex;flex-direction:column;gap:32px">
+<div style="display:flex;flex-direction:column;gap:16px;align-items:start">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649;border:1px solid #8f8676;border-radius:999px;padding:4px 20px">7 · Golpes virtuais · dinâmica</p>
+<h2 style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:66px;font-weight:700;line-height:1.14;letter-spacing:-0.66px">Dinâmica: identifique o golpe</h2>
+</div>
+<p style="font-size:34px;line-height:1.4;color:#5c5649">Em grupo, marque o <b>gatilho</b> e o <b>pedido</b> de cada mensagem.</p>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px">
+<div style="background:#e9dfcb;border:1px solid #8f8676;border-radius:8px 8px 8px 2px;padding:32px;display:flex;flex-direction:column;gap:8px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649">mensagem 1</p>
+<p style="font-size:34px;line-height:1.4">Oi, mandei um código pro seu número sem querer, me passa?</p>
+</div>
+<div style="background:#e9dfcb;border:1px solid #8f8676;border-radius:8px 8px 8px 2px;padding:32px;display:flex;flex-direction:column;gap:8px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649">mensagem 2</p>
+<p style="font-size:34px;line-height:1.4">PARABÉNS! 10.000 diamantes grátis no Free Fire. Faça login aqui. Só 2h!</p>
+</div>
+<div style="background:#e9dfcb;border:1px solid #8f8676;border-radius:8px 8px 8px 2px;padding:32px;display:flex;flex-direction:column;gap:8px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649">mensagem 3</p>
+<p style="font-size:34px;line-height:1.4">Mãe, troquei de número. Preciso pagar uma conta urgente, faz um Pix?</p>
+</div>
+<div style="background:#e9dfcb;border:1px solid #8f8676;border-radius:8px 8px 8px 2px;padding:32px;display:flex;flex-direction:column;gap:8px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649">mensagem 4</p>
+<p style="font-size:34px;line-height:1.4">Vaga Jovem Aprendiz, R$ 2.800. Pague só R$ 49 do kit de uniforme.</p>
+</div>
+<div style="background:#e9dfcb;border:1px solid #8f8676;border-radius:8px 8px 8px 2px;padding:32px;display:flex;flex-direction:column;gap:8px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649">mensagem 5</p>
+<p style="font-size:34px;line-height:1.4">Ganhe R$ 50 por dia curtindo vídeos. Entre no grupo!</p>
+</div>
+<div style="background:#e9dfcb;border:1px solid #8f8676;border-radius:8px 8px 8px 2px;padding:32px;display:flex;flex-direction:column;gap:8px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649">mensagem 6</p>
+<p style="font-size:34px;line-height:1.4">Lembrete da escola: reunião de pais na sexta, às 19h.</p>
+</div>
+</div>
+
+</section>
+</div><div class="notes">Dinâmica de 8 minutos. Divida a turma em grupos; cada grupo marca o gatilho (urgência, autoridade, escassez, prova social, dinheiro fácil) e o pedido (código, Pix, link, dados). Respostas: 1 = invasão de conta (pedido de código). 2 = phishing de jogo + escassez (login em link falso, prazo de 2h). 3 = falso parente (urgência + Pix; ligue para o número antigo). 4 = falsa vaga (empresa séria não cobra para contratar). 5 = tarefa paga, pirâmide (depois vão pedir depósito). 6 = mensagem legítima: sem link, sem pedido, sem pressa — serve para treinar que nem tudo é golpe. Todas as mensagens são fictícias.</div></div><div class="frame"><div class="stage"><section id="regra-ouro" data-transition="fade" style="background:#f6f1e7;color:#1b1a17;font-family:'Atkinson Hyperlegible', Verdana, sans-serif;font-size:34px;line-height:1.4;padding:96px;display:flex;flex-direction:column;justify-content:center;gap:32px">
+<div style="display:flex;flex-direction:column;gap:16px;align-items:start">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649;border:1px solid #8f8676;border-radius:999px;padding:4px 20px">A regra de ouro</p>
+<h1 style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:108px;font-weight:800;line-height:1.05;letter-spacing:-2px">Pressa + pedido de código, Pix ou dados</h1>
+<p style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:108px;font-weight:800;line-height:1.05;letter-spacing:-2px;background:#ffd23f;padding:4px 24px">= pare e confirme</p>
+</div>
+<p style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:42px;font-weight:600;line-height:1.3;color:#5c5649;width:1400px">por outro canal: ligue, fale pessoalmente ou abra o app oficial.</p>
+
+</section>
+</div><div class="notes">Feche a dinâmica com a regra de ouro e peça para a turma repetir. Ela resume os gatilhos que vimos: quase todo golpe combina pressa com um pedido. Confirmar por outro canal significa sair da conversa em que o golpista está e falar pelo caminho que você já conhecia.</div></div><div class="frame"><div class="stage"><section id="kit" data-transition="fade" style="background:#f6f1e7;color:#1b1a17;font-family:'Atkinson Hyperlegible', Verdana, sans-serif;font-size:34px;line-height:1.4;padding:96px 96px 144px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px;align-items:start">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649;border:1px solid #8f8676;border-radius:999px;padding:4px 20px">7 · Golpes virtuais</p>
+<h2 style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:66px;font-weight:700;line-height:1.14;letter-spacing:-0.66px">Kit básico de proteção</h2>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px 48px">
+<div style="display:flex;flex-direction:column;gap:12px;border-top:1px solid #8f8676;padding:24px 0 0 0">
+<p style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:66px;font-weight:700;line-height:1">1</p>
+<p style="font-size:34px;line-height:1.4">Verificação em duas etapas em <b>todas</b> as contas, inclusive jogos.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px;border-top:1px solid #8f8676;padding:24px 0 0 0">
+<p style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:66px;font-weight:700;line-height:1">2</p>
+<p style="font-size:34px;line-height:1.4">Senhas longas e diferentes: uma frase e, se puder, um gerenciador de senhas.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px;border-top:1px solid #8f8676;padding:24px 0 0 0">
+<p style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:66px;font-weight:700;line-height:1">3</p>
+<p style="font-size:34px;line-height:1.4">Perfil privado. Nada de escola, endereço ou rotina nos posts.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px;border-top:1px solid #8f8676;padding:24px 0 0 0">
+<p style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:66px;font-weight:700;line-height:1">4</p>
+<p style="font-size:34px;line-height:1.4">Código de verificação não se passa para <b>ninguém</b>.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px;border-top:1px solid #8f8676;padding:24px 0 0 0">
+<p style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:66px;font-weight:700;line-height:1">5</p>
+<p style="font-size:34px;line-height:1.4">Limite noturno de Pix baixo no app do banco.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px;border-top:1px solid #8f8676;padding:24px 0 0 0">
+<p style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:66px;font-weight:700;line-height:1">6</p>
+<p style="font-size:34px;line-height:1.4">Palavra-senha com a família contra golpes de voz clonada.</p>
+</div>
+</div>
+
+</section>
+</div><div class="notes">Desafio para casa: ativar a verificação em duas etapas em pelo menos uma conta hoje, de preferência o WhatsApp (PIN de 6 dígitos), e combinar a palavra-senha com a família no jantar. Lembre o estudo de phishing: barreiras técnicas protegem mesmo quando a atenção falha.</div></div><div class="frame"><div class="stage"><section id="se-cair" data-transition="fade" style="background:#f6f1e7;color:#1b1a17;font-family:'Atkinson Hyperlegible', Verdana, sans-serif;font-size:34px;line-height:1.4;padding:96px 96px 144px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px;align-items:start">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649;border:1px solid #8f8676;border-radius:999px;padding:4px 20px">8 · Se você cair</p>
+<h2 style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:66px;font-weight:700;line-height:1.14;letter-spacing:-0.66px">Caiu num golpe? Aja rápido.</h2>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:32px 64px">
+<div style="display:flex;flex-direction:row;gap:24px;align-items:start">
+<p style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:42px;font-weight:700;line-height:1.3;width:48px">1</p>
+<div style="display:flex;flex-direction:column;gap:4px;width:760px">
+<p style="font-size:34px;line-height:1.4"><b>Respire e conte para um adulto</b></p>
+<p style="font-size:34px;line-height:1.4;color:#5c5649">A vergonha ajuda o golpista. A culpa é de quem aplicou o golpe.</p>
+</div>
+</div>
+<div style="display:flex;flex-direction:row;gap:24px;align-items:start">
+<p style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:42px;font-weight:700;line-height:1.3;width:48px">2</p>
+<div style="display:flex;flex-direction:column;gap:4px;width:760px">
+<p style="font-size:34px;line-height:1.4"><b>Perdeu dinheiro no Pix?</b></p>
+<p style="font-size:34px;line-height:1.4;color:#5c5649">Abra o app do banco agora e conteste pelo MED. Quanto antes, melhor.</p>
+</div>
+</div>
+<div style="display:flex;flex-direction:row;gap:24px;align-items:start">
+<p style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:42px;font-weight:700;line-height:1.3;width:48px">3</p>
+<div style="display:flex;flex-direction:column;gap:4px;width:760px">
+<p style="font-size:34px;line-height:1.4"><b>Registre um boletim de ocorrência</b></p>
+<p style="font-size:34px;line-height:1.4;color:#5c5649">Online, na Delegacia Virtual. Guarde prints, links e comprovantes.</p>
+</div>
+</div>
+<div style="display:flex;flex-direction:row;gap:24px;align-items:start">
+<p style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:42px;font-weight:700;line-height:1.3;width:48px">4</p>
+<div style="display:flex;flex-direction:column;gap:4px;width:760px">
+<p style="font-size:34px;line-height:1.4"><b>Conta invadida?</b></p>
+<p style="font-size:34px;line-height:1.4;color:#5c5649">Use a recuperação oficial do app, avise seus contatos e ative as duas etapas.</p>
+</div>
+</div>
+<div style="display:flex;flex-direction:row;gap:24px;align-items:start">
+<p style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:42px;font-weight:700;line-height:1.3;width:48px">5</p>
+<div style="display:flex;flex-direction:column;gap:4px;width:760px">
+<p style="font-size:34px;line-height:1.4"><b>Nude vazado ou deepfake?</b></p>
+<p style="font-size:34px;line-height:1.4;color:#5c5649">Não pague, não negocie, guarde as provas e procure a SaferNet.</p>
+</div>
+</div>
+<div style="display:flex;flex-direction:row;gap:24px;align-items:start">
+<p style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:42px;font-weight:700;line-height:1.3;width:48px">6</p>
+<div style="display:flex;flex-direction:column;gap:4px;width:760px">
+<p style="font-size:34px;line-height:1.4"><b>Aconteceu na escola?</b></p>
+<p style="font-size:34px;line-height:1.4;color:#5c5649">Avise a coordenação. A vítima precisa de proteção, não de exposição.</p>
+</div>
+</div>
+</div>
+
+</section>
+</div><div class="notes">Bloco 8 (4 min no total). Reforce o passo 1: a vergonha é a maior aliada do golpista, e quem fala cedo protege outras pessoas. No passo 3, não apague as conversas: elas são provas; anote também o @ ou o número do golpista. No passo 4, depois de recuperar a conta, avise os contatos que não é você pedindo dinheiro. O próximo slide traz os contatos de ajuda.</div></div><div class="frame"><div class="stage"><section id="ajuda" data-transition="fade" style="background:#f6f1e7;color:#1b1a17;font-family:'Atkinson Hyperlegible', Verdana, sans-serif;font-size:34px;line-height:1.4;padding:96px 96px 144px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px;align-items:start">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649;border:1px solid #8f8676;border-radius:999px;padding:4px 20px">8 · Se você cair</p>
+<h2 style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:66px;font-weight:700;line-height:1.14;letter-spacing:-0.66px">Onde pedir ajuda</h2>
+</div>
+<div style="display:flex;flex-direction:row;gap:64px">
+<div style="width:700px;background:#e9dfcb;border-radius:8px;padding:48px;display:flex;flex-direction:column;gap:16px;align-self:start">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649">perdeu dinheiro no Pix?</p>
+<h3 style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:42px;font-weight:600;line-height:1.3">Conteste pelo MED no app do banco</h3>
+<p style="font-size:34px;line-height:1.4">Desde 2/2/2026, o MED 2.0 é obrigatório em todos os bancos e rastreia o dinheiro por várias contas.</p>
+<p style="font-size:34px;line-height:1.4;color:#5c5649">A devolução não é garantida: depende de ainda haver saldo.</p>
+</div>
+<div style="width:964px;display:flex;flex-direction:column;gap:24px">
+<div style="display:flex;flex-direction:column;gap:4px;border-top:1px solid #8f8676;padding:16px 0 0 0">
+<p style="font-size:34px;line-height:1.4"><b>Canal de Ajuda da SaferNet</b> — chat e e-mail, grátis e sigiloso</p>
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649">canaldeajuda.org.br</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:4px;border-top:1px solid #8f8676;padding:16px 0 0 0">
+<p style="font-size:34px;line-height:1.4"><b>Central de Denúncias</b> — anônima, para conteúdo de abuso</p>
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649">denuncie.org.br</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:4px;border-top:1px solid #8f8676;padding:16px 0 0 0">
+<p style="font-size:34px;line-height:1.4"><b>Delegacia Virtual</b> do seu estado</p>
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649">boletim de ocorrência online</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:4px;border-top:1px solid #8f8676;padding:16px 0 0 0">
+<p style="font-size:34px;line-height:1.4"><b>Conselho Tutelar</b></p>
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649">quando a vítima é menor de idade</p>
+</div>
+</div>
+</div>
+<p style="position:absolute;left:96px;bottom:48px;width:1728px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649;border-top:1px solid #8f8676;padding:12px 0 0 0">Fonte: Banco Central, Resolução BCB nº 493/2025 (MED 2.0)</p>
+
+</section>
+</div><div class="notes">MED é o Mecanismo Especial de Devolução do Pix. Desde 2 de fevereiro de 2026, o MED 2.0 (Resolução BCB nº 493/2025) é obrigatório para todos os bancos, tem autoatendimento no app e permite rastrear o dinheiro por várias contas. Mas a devolução depende de ainda haver saldo nas contas, então a velocidade importa. A Central de Denúncias é conveniada ao Ministério Público Federal. Use também o botão &quot;denunciar&quot; da própria plataforma. Confira as regras do MED antes da palestra, porque elas mudam.</div></div><div class="frame"><div class="stage"><section id="prompt-ia" data-transition="fade" style="background:#f6f1e7;color:#1b1a17;font-family:'Atkinson Hyperlegible', Verdana, sans-serif;font-size:34px;line-height:1.4;padding:96px 96px 144px;display:flex;flex-direction:column;gap:32px">
+<div style="display:flex;flex-direction:column;gap:16px;align-items:start">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649;border:1px solid #8f8676;border-radius:999px;padding:4px 20px">9 · Para levar</p>
+<h2 style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:66px;font-weight:700;line-height:1.14;letter-spacing:-0.66px">Leve um checador no bolso</h2>
+</div>
+<div style="display:flex;flex-direction:row;gap:48px">
+<div style="width:1260px;background:#e9dfcb;border:1px solid #8f8676;border-radius:8px;padding:32px;display:flex;flex-direction:column;gap:12px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649">prompt curto · cole na IA do seu celular</p>
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.45">Cheque isto como um checador de fatos. Se não puder pesquisar na web, avise. Separe as afirmações, procure a fonte original e agências de checagem (Lupa, Aos Fatos, Comprova, Fato ou Fake, Estadão Verifica). Aponte sinais de manipulação, de IA e de golpe (pedido de Pix, código, dados ou link). Dê o veredito: verdadeiro, falso, enganoso, fora de contexto ou sem evidências, com nível de confiança. Liste as fontes com links, sem inventar nada. Responda em linguagem simples.<br>Conteúdo: [COLE AQUI]</p>
+</div>
+<div style="width:420px;display:flex;flex-direction:column;gap:16px;align-items:center">
+<img alt="[QR code com o prompt completo e o checklist P.I.R.A.]" style="width:360px;height:360px;object-fit:contain;border:2px dashed #8f8676;border-radius:8px;background:#e9dfcb">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649;text-align:center">aponte a câmera para levar o prompt completo</p>
+</div>
+</div>
+<p style="font-size:34px;line-height:1.4"><b>A IA também erra.</b> Abra os links que ela citar e confirme numa agência. Nunca cole senha, código, dados do banco ou foto íntima.</p>
+
+</section>
+</div><div class="notes">Bloco 9 (5 a 8 min com perguntas). Este é o prompt curto do material de apoio, feito para o celular (Meta AI no WhatsApp ou qualquer app de IA). Antes da aula, gere um QR code que leve ao prompt completo e ao checklist P.I.R.A. — por exemplo, um documento compartilhado — e coloque no lugar indicado. Alertas para a turma: a IA pode inventar fontes e links, pode não ter acesso a notícias recentes e pode concordar com você só para agradar. Ela é ponto de partida, não juíza.</div></div><div class="frame"><div class="stage"><section id="mensagens" data-transition="fade" style="background:#f6f1e7;color:#1b1a17;font-family:'Atkinson Hyperlegible', Verdana, sans-serif;font-size:34px;line-height:1.4;padding:96px 96px 144px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px;align-items:start">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649;border:1px solid #8f8676;border-radius:999px;padding:4px 20px">9 · Para levar</p>
+<h2 style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:66px;font-weight:700;line-height:1.14;letter-spacing:-0.66px">Oito coisas para levar daqui</h2>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px 64px">
+<div style="display:flex;flex-direction:row;gap:24px;align-items:start;border-top:1px solid #8f8676;padding:16px 0 0 0"><p style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:42px;font-weight:700;line-height:1.1;width:48px">1</p><p style="font-size:34px;line-height:1.4;width:760px"><b>Emoção forte = sinal amarelo.</b> Pare antes de compartilhar.</p></div>
+<div style="display:flex;flex-direction:row;gap:24px;align-items:start;border-top:1px solid #8f8676;padding:16px 0 0 0"><p style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:42px;font-weight:700;line-height:1.1;width:48px">5</p><p style="font-size:34px;line-height:1.4;width:760px"><b>Código, senha e Pix com pressa = golpe</b> até que se prove o contrário.</p></div>
+<div style="display:flex;flex-direction:row;gap:24px;align-items:start;border-top:1px solid #8f8676;padding:16px 0 0 0"><p style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:42px;font-weight:700;line-height:1.1;width:48px">2</p><p style="font-size:34px;line-height:1.4;width:760px"><b>Saia da mensagem para checar.</b> O site nunca vai dizer que é falso.</p></div>
+<div style="display:flex;flex-direction:row;gap:24px;align-items:start;border-top:1px solid #8f8676;padding:16px 0 0 0"><p style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:42px;font-weight:700;line-height:1.1;width:48px">6</p><p style="font-size:34px;line-height:1.4;width:760px"><b>Pediu dinheiro?</b> Ligue de volta.</p></div>
+<div style="display:flex;flex-direction:row;gap:24px;align-items:start;border-top:1px solid #8f8676;padding:16px 0 0 0"><p style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:42px;font-weight:700;line-height:1.1;width:48px">3</p><p style="font-size:34px;line-height:1.4;width:760px"><b>“Vi em todo lugar” não é prova.</b> Repetição engana até quem sabe.</p></div>
+<div style="display:flex;flex-direction:row;gap:24px;align-items:start;border-top:1px solid #8f8676;padding:16px 0 0 0"><p style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:42px;font-weight:700;line-height:1.1;width:48px">7</p><p style="font-size:34px;line-height:1.4;width:760px"><b>Caiu? Conte rápido.</b> Velocidade recupera dinheiro e protege outros.</p></div>
+<div style="display:flex;flex-direction:row;gap:24px;align-items:start;border-top:1px solid #8f8676;padding:16px 0 0 0"><p style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:42px;font-weight:700;line-height:1.1;width:48px">4</p><p style="font-size:34px;line-height:1.4;width:760px"><b>Seus olhos não detectam deepfake.</b> Cheque a origem.</p></div>
+<div style="display:flex;flex-direction:row;gap:24px;align-items:start;border-top:1px solid #8f8676;padding:16px 0 0 0"><p style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:42px;font-weight:700;line-height:1.1;width:48px">8</p><p style="font-size:34px;line-height:1.4;width:760px"><b>IA ajuda, mas não é juíza.</b></p></div>
+</div>
+
+</section>
+</div><div class="notes">Leia as oito mensagens devagar, de 1 a 8 (a coluna da esquerda tem de 1 a 4; a da direita, de 5 a 8). Se der tempo, peça para alguém da turma escolher a que achou mais útil e dizer por quê.</div></div><div class="frame"><div class="stage"><section id="fim" data-transition="fade" style="background:#f6f1e7;color:#1b1a17;font-family:'Atkinson Hyperlegible', Verdana, sans-serif;font-size:34px;line-height:1.4;padding:96px;display:flex;flex-direction:column;justify-content:space-between;gap:48px">
+<div style="display:flex;flex-direction:row;justify-content:space-between;align-items:center;border-bottom:4px double #1b1a17;padding:0 0 16px 0">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649">Edição especial · Ensino médio</p>
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649">Fake news e golpes virtuais</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:32px">
+<h1 style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:144px;font-weight:800;line-height:1;letter-spacing:-3px">Perguntas?</h1>
+<p style="font-family:'Bricolage Grotesque', 'Arial Black', sans-serif;font-size:42px;font-weight:600;line-height:1.3;color:#5c5649">Pare. Investigue. Rastreie. Ache outras fontes.</p>
+</div>
+<div style="display:flex;flex-direction:row;justify-content:space-between;align-items:center;border-top:1px solid #8f8676;padding:16px 0 0 0">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649">Alex Manoel Ferreira Silva · +55 (62) 9 9296-9758</p>
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#5c5649">Obrigado!</p>
+</div>
+<p style="position:absolute;left:1340px;top:330px;width:380px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:56px;font-weight:600;letter-spacing:8px;line-height:1.2;text-transform:uppercase;text-align:center;color:#ffffff;background:#1f5aa6;border-radius:2px;padding:16px 24px;transform:rotate(-6deg)">Fato</p>
+
+</section>
+</div><div class="notes">Abra para perguntas. Antes de sair, sugira à escola uma segunda sessão curta, de 15 a 20 minutos, um ou dois meses depois, como &quot;reforço da vacina&quot;: sem reforço, o efeito desse tipo de treino se dissipa em cerca de dois meses; com reforço, dura pelo menos três (Maertens et al., 2021). Esta palestra é a primeira dose. Para professores: o EducaMídia (Instituto Palavra Aberta) tem planos de aula gratuitos, e o tema está previsto na BNCC (Competência Geral 5).</div></div>
+<div class="hud" id="hud"></div>
+<script>
+const frames=[...document.querySelectorAll('.frame')];let i=0;
+function fit(){const s=Math.min(innerWidth/1920,innerHeight/1080);
+  document.querySelectorAll('.stage').forEach(e=>e.style.transform=`translate(-50%,-50%) scale(${s})`);}
+function show(n){i=Math.max(0,Math.min(frames.length-1,n));frames.forEach((f,k)=>f.classList.toggle('on',k===i));
+  document.getElementById('hud').textContent=`${i+1} / ${frames.length} · ←/→ navegar · N notas · F tela cheia`;
+  history.replaceState(null,'','#'+(i+1));}
+addEventListener('resize',fit);
+addEventListener('keydown',e=>{if(['ArrowRight','PageDown',' '].includes(e.key))show(i+1);
+  else if(['ArrowLeft','PageUp'].includes(e.key))show(i-1);
+  else if(e.key==='n'||e.key==='N')document.body.classList.toggle('show-notes');
+  else if(e.key==='f'||e.key==='F')document.documentElement.requestFullscreen?.();});
+addEventListener('click',e=>show(i+(e.clientX>innerWidth/2?1:-1)));
+fit();show((parseInt(location.hash.slice(1))||1)-1);
+</script></body></html>

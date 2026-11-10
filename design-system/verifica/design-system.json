@@ -1,0 +1,24 @@
+{
+  "v": 3,
+  "assetGroups": {},
+  "blobs": {},
+  "createdOnFiles": {
+    "at": "2026-11-10T00:06:35Z",
+    "v": 1
+  },
+  "docs": {
+    "sections": []
+  },
+  "groups": [],
+  "lastChange": {
+    "at": "2026-11-10T00:08:00Z",
+    "by": "Windol",
+    "note": "Primeira versão: cores, tipografia, espaçamento, raios, guia e capa.",
+    "via": "Cowork"
+  },
+  "layout": "files",
+  "libraries": [],
+  "namespace": "Verifica",
+  "sections": {},
+  "title": "Verifica"
+}
