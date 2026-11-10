@@ -16,6 +16,11 @@ html,body{margin:0;height:100%;background:#111;overflow:hidden}
   background:rgba(0,0,0,.85);color:#eee;font:16px/1.5 system-ui,sans-serif;padding:16px 24px}
 body.show-notes .frame.on .notes{display:block}
 .hud{position:fixed;right:12px;bottom:8px;color:#888;font:12px system-ui,sans-serif}
+/* Revelação por clique (data-build-in="efeito passo"), como na apresentação publicada */
+[data-build-in]{transition:opacity .35s ease,scale .35s cubic-bezier(.3,1.6,.5,1),translate .35s ease}
+[data-build-in].oculto{opacity:0;pointer-events:none}
+[data-build-in^="pop"].oculto{scale:.5}
+[data-build-in^="rise"].oculto{translate:0 40px}
 </style></head><body>
 <div class="frame"><div class="stage"><section id="cover" data-transition="fade" style="background:#f6f1e7;color:#1b1a17;font-family:'Atkinson Hyperlegible', Verdana, sans-serif;font-size:34px;line-height:1.4;padding:96px;display:flex;flex-direction:column;justify-content:space-between;gap:48px">
 <div style="display:flex;flex-direction:row;justify-content:space-between;align-items:center;border-bottom:4px double #1b1a17;padding:0 0 16px 0">
@@ -961,17 +966,25 @@ body.show-notes .frame.on .notes{display:block}
 </div><div class="notes">Abra para perguntas. Antes de sair, sugira à escola uma segunda sessão curta, de 15 a 20 minutos, um ou dois meses depois, como &quot;reforço da vacina&quot;: sem reforço, o efeito desse tipo de treino se dissipa em cerca de dois meses; com reforço, dura pelo menos três (Maertens et al., 2021). Esta palestra é a primeira dose. Para professores: o EducaMídia (Instituto Palavra Aberta) tem planos de aula gratuitos, e o tema está previsto na BNCC (Competência Geral 5).</div></div>
 <div class="hud" id="hud"></div>
 <script>
-const frames=[...document.querySelectorAll('.frame')];let i=0;
+const frames=[...document.querySelectorAll('.frame')];let i=0,passo=0;
+// Passos de cada slide: elementos com o mesmo número aparecem juntos, em ordem crescente.
+const passos=frames.map(f=>{const g={};
+  f.querySelectorAll('[data-build-in]').forEach(el=>{const n=parseInt(el.dataset.buildIn.split(/\s+/)[1])||1;(g[n]=g[n]||[]).push(el);});
+  return Object.keys(g).map(Number).sort((a,b)=>a-b).map(n=>g[n]);});
+function revelar(k,ate){passos[k].forEach((grupo,j)=>grupo.forEach(el=>el.classList.toggle('oculto',j>=ate)));}
 function fit(){const s=Math.min(innerWidth/1920,innerHeight/1080);
   document.querySelectorAll('.stage').forEach(e=>e.style.transform=`translate(-50%,-50%) scale(${s})`);}
-function show(n){i=Math.max(0,Math.min(frames.length-1,n));frames.forEach((f,k)=>f.classList.toggle('on',k===i));
+function show(n,completo){i=Math.max(0,Math.min(frames.length-1,n));passo=completo?passos[i].length:0;revelar(i,passo);
+  frames.forEach((f,k)=>f.classList.toggle('on',k===i));
   document.getElementById('hud').textContent=`${i+1} / ${frames.length} · ←/→ navegar · N notas · F tela cheia`;
   history.replaceState(null,'','#'+(i+1));}
+function avancar(){if(passo<passos[i].length)revelar(i,++passo);else if(i<frames.length-1)show(i+1);}
+function voltar(){if(passo>0)revelar(i,--passo);else if(i>0)show(i-1,true);}
 addEventListener('resize',fit);
-addEventListener('keydown',e=>{if(['ArrowRight','PageDown',' '].includes(e.key))show(i+1);
-  else if(['ArrowLeft','PageUp'].includes(e.key))show(i-1);
+addEventListener('keydown',e=>{if(['ArrowRight','PageDown',' '].includes(e.key))avancar();
+  else if(['ArrowLeft','PageUp'].includes(e.key))voltar();
   else if(e.key==='n'||e.key==='N')document.body.classList.toggle('show-notes');
   else if(e.key==='f'||e.key==='F')document.documentElement.requestFullscreen?.();});
-addEventListener('click',e=>show(i+(e.clientX>innerWidth/2?1:-1)));
+addEventListener('click',e=>e.clientX>innerWidth/2?avancar():voltar());
 fit();show((parseInt(location.hash.slice(1))||1)-1);
 </script></body></html>
